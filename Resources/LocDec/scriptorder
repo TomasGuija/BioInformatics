@@ -1,0 +1,22 @@
+if [ -n "$1" ]
+then
+  start=$1      # If directory name given as a script argument...
+else
+   start=1
+fi  
+if [ -n "$2" ]
+then
+  end=$2      
+else
+  end=1
+fi
+order=$start
+for ((order=start;order<=end;order+=1));do
+	
+	./ComputeDistanceLocal/compute -f n -s d -d l -m 0 -o $order "nef.fsa" "nef.nex"
+	echo -n $order'	'
+	./CompareDistances/compare  "anchor.nex" "nef.nex"
+	rm nef.nex
+done
+
+exit 0
