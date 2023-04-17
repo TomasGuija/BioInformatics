@@ -33,45 +33,7 @@ void readFile(char* path){
     }
 }
 
-/*
-tuple_list classifier(tuple_list res, string sequence, int index, int n, string N_words[]){
-    //Base case
-    if(index >= sequence.length())
-        return res;
-    //If site has already been classified, go on to next site
-    if(get<1>(res.at(index)) != 0)
-        res = classifier(res, sequence, index++, n, N_words);
-    else{
-        //Create a new class and get all N_words containing this site
-        get<1>(res.at(index)) = n;
 
-        string words[N];
-        int indexes[N];
-        int cont = 0;
-        for(int j = 0; j < N-1; j++){
-            if(index-j >= 0 && index-j+N < sequence.length()){
-                words[cont] = sequence.substr(index-j, N);
-                indexes[cont] = j;
-            }
-            cont++;
-        }
-
-        //Look for instances of these same N_words in the sequence
-        for(int j = 0; j < cont; j++){
-            for(int k = 0; k < sequence.length() - (N-1); k++){
-                if(words[j] == N_words[k]){
-                    res = classifier(res, sequence, k+indexes[j], n, N_words);
-                }
-            }
-        }
-        
-        res = classifier(res, sequence, index++, n++, N_words);
-        return res;
-
-    }
-        
-}
-*/
 
 
 
@@ -79,37 +41,43 @@ tuple_list rewriteSequence(string sequence){
 
     //Clasify all sites to class 0 (unclassified)
     tuple_list res;
-    for(int i = 0; i < sequence.length(); i++)
-        res.push_back(tuple <char, int>(sequence[i], 0));
-
-    //Get all N_words of the sequence
     int n_N_words = sequence.length() - (N-1);
     string N_words[n_N_words];
+    for(int i = 0; i < sequence.length(); i++){
+        res.push_back(tuple <char, int>(sequence[i], 0)); //Initialising the res <A,0>, <C,0>...
+        //Storing every single N_word in an array
+        if(i < n_N_words)
+            N_words[i] = sequence.substr(i, N);
 
-    for(int i = 0; i < n_N_words; i++){
-        N_words[i] = sequence.substr(i, N);
     }
+
 
     //Classifying sites
     int n = 1;
+    //Bigger loop goes through every single N word
     for(int i = 0; i < n_N_words; i++){
         string N_word = N_words[i];
+        //Second loop goes through all N words starting from i+1
         for(int j = i+1; j < n_N_words; j++){
             if(N_word == N_words[j]){
-                //cout << N_word << "==" << N_words[j] << endl;
-
+                //This loop goes through all letters in the matching N-words
                 for(int k = 0; k < N; k++){
+                    //Get the current class of each site
                     int class_i = get<1>(res.at(i+k));
                     int class_j = get<1>(res.at(j+k));
+                    //In case one of them has been classifed and the other hasn't, we match the class of the unclassified one to the first one
                     if(class_i != 0 && class_j == 0)
                         class_j = class_i;
                     else if(class_i == 0 && class_j != 0)
                         class_i = class_j;
+                    //If none have been classified, we create a new class for both of them
                     else if(class_i == 0 && class_j == 0){
                         class_j = n;
                         class_i = n;
                         n++;
-                    }else{
+                    }else{ //When both have been classified
+                        //We go through every single site in the sequence, and we will preserve the class of the site i
+                        //Whenever we find a site classified as class_j, we make its class equal to class_i
                         for(int l = 0; l < sequence.length(); l++){
                             if(get<1>(res.at(l)) == class_j){
                                 get<1>(res.at(l)) = class_i;
@@ -117,9 +85,10 @@ tuple_list rewriteSequence(string sequence){
                         }
                         class_j = class_i;
                     }
+                    //Update the values of the classes in res
                     get<1>(res.at(i+k)) = class_i;
                     get<1>(res.at(j+k)) = class_j;
-                    //cout << N_word[k] << " " << class_i << endl;
+                    cout << N_word[k] << " " << class_i << endl;
                 }
             }
         }
@@ -127,7 +96,6 @@ tuple_list rewriteSequence(string sequence){
 
     return res;
 }
-
 
 int main(){
     readFile("nef.fsa");
