@@ -4,15 +4,21 @@
 #include <tuple>
 #include <vector>
 #include <string.h>
+#include <map>
+
 #define MAX_SEQUENCES 100
-#define MAX
+
 using namespace std;
 
 typedef vector<tuple<char,int> > tuple_list;
+typedef vector<vector<tuple<char, int> >> tuple_matrix;
 
 ifstream file;
-string sequences[MAX_SEQUENCES];
+vector<string> sequences;
+
 int N;
+int n_sequences = 0;
+map <int, vector<tuple<int, int> >> classes_map;
 
 void readFile(char* path){
     file.open(path);
@@ -21,19 +27,18 @@ void readFile(char* path){
     }
     
     string line;
-    int i = 0;
     while(getline(file, line)){
+        sequences.push_back("");
         if(line[0] != '>'){
             while(!line.empty()){
-                sequences[i] += line;
+                sequences[n_sequences] += line;
                 getline(file, line);
             }
-            i++;
+            //cout << "sequence  " << endl << sequences[n_sequences] << endl << endl; 
+            n_sequences++;
         }
     }
 }
-
-
 
 
 
@@ -65,6 +70,8 @@ tuple_list rewriteSequence(string sequence){
                     //Get the current class of each site
                     int class_i = get<1>(res.at(i+k));
                     int class_j = get<1>(res.at(j+k));
+                    cout << "Letras: " << get<0>(res.at(i+k)) << "  " << get<0>(res.at(j+k)) << endl;
+
                     //In case one of them has been classifed and the other hasn't, we match the class of the unclassified one to the first one
                     if(class_i != 0 && class_j == 0)
                         class_j = class_i;
@@ -88,7 +95,6 @@ tuple_list rewriteSequence(string sequence){
                     //Update the values of the classes in res
                     get<1>(res.at(i+k)) = class_i;
                     get<1>(res.at(j+k)) = class_j;
-                    cout << N_word[k] << " " << class_i << endl;
                 }
             }
         }
@@ -97,14 +103,101 @@ tuple_list rewriteSequence(string sequence){
     return res;
 }
 
+
+tuple_matrix rewriteSequenceList(vector<string> sequences){
+
+    //We have a matrix for storing the results, each row corresponding to the sites of a sequence
+    tuple_matrix res;
+    int n_N_words;
+    //This vector stores al N_words, along with the sequence they are in, and their index within this sequence
+    vector<tuple<string, tuple<int, int>>> N_words;
+
+    //The bigger loop goes through all sequences
+    for(int i = 0; i < sequences.size(); i++){
+        n_N_words = sequences[i].length() - (N-1); 
+        res.push_back({});
+        //The smaller loop goes through every character in each sequence
+        for(int j = 0; j < sequences[i].length(); j++){
+            //Initialising res, with each site classified as class 0 (unclassified)
+            res.at(i).push_back(tuple <char, int>(sequences[i][j], 0));
+            //Storing N_words
+            if(j < n_N_words)
+                N_words.push_back({sequences[i].substr(j, N), {i,j}});
+        }
+    }
+
+    //Total number of N_words in all sequences
+    n_N_words = N_words.size();
+
+    //Classifying sites
+    int n = 1;
+    for(int i = 0; i < n_N_words; i++){
+        tuple<string, tuple<int, int>> N_word_i = N_words[i];
+
+        for(int j = i+1; j < n_N_words; j++){
+            tuple<string, tuple<int,int>> N_word_j = N_words[j];
+
+            if(get<0>(N_word_i) == get<0>(N_word_j)){
+                int sequence_i = get<0>(get<1>(N_word_i));
+                int sequence_j = get<0>(get<1>(N_word_j)); 
+                int index_i = get<1>(get<1>(N_word_i));
+                int index_j = get<1>(get<1>(N_word_j)); 
+                
+                for(int k = 0; k < N; k++){
+                    //Here I get the sequence and index of each site to be classified
+                    int class_i = get<1>(res.at(sequence_i).at(index_i+k));
+                    int class_j = get<1>(res.at(sequence_j).at(index_j+k));
+
+                    if(class_i != 0 && class_j == 0){
+                        class_j = class_i;
+                        classes_map.at(class_i).push_back({sequence_j, index_j+k});
+                    }
+                    else if(class_i == 0 && class_j != 0){
+                        class_i = class_j;
+                        classes_map.at(class_j).push_back({sequence_i, index_i+k});
+                    }
+                    else if(class_i == 0 && class_j == 0){
+                        class_j = n;
+                        class_i = n;
+                        classes_map.insert({n, {{sequence_i, index_i+k}, {sequence_j, index_j+k}}});
+                        n++;
+                    }else if(class_i != class_j){
+                        vector<tuple<int, int>> to_change;
+                        to_change = classes_map.at(class_j);
+                        for(int l = 0; l < to_change.size(); l++){
+                            int sequence = get<0>(to_change.at(l));
+                            int index = get<1>(to_change.at(l));
+                            get<1>(res.at(sequence).at(index)) = class_i;
+                            classes_map.at(class_i).push_back(to_change.at(l));
+                        }
+                        classes_map.erase(class_j);
+                        class_j = class_i;
+                    }
+                    get<1>(res.at(sequence_i).at(index_i+k)) = class_i;
+                    get<1>(res.at(sequence_j).at(index_j+k)) = class_j;
+                }
+            }
+        }
+    }
+
+    return res;
+}
+
+
 int main(){
     readFile("nef.fsa");
     N = 5;
-    tuple_list res = rewriteSequence(sequences[0]);
-    cout << "ORIGINAL SEQUENCE: " << endl << sequences[0] << endl;
-    cout << endl << "REWRITTEN SEQUENCE:" << endl;
+    tuple_matrix res = rewriteSequenceList(sequences);
+    ofstream file;
+    file.open("rewritten.txt");
     for(int i = 0; i < res.size(); i++){
-        cout << get<0>(res.at(i)) << get<1>(res.at(i)) << " ";
+        for (int j = 0; j < res.at(i).size(); j++)
+        {
+            file << get<0>(res.at(i).at(j)) << get<1>(res.at(i).at(j)) << " ";
+            if(j % 20 == 0 && j != 0) file << endl;
+        }
+        cout << endl << endl;
     }
+    file.close();
     return 0;
 }
