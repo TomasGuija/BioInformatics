@@ -5,6 +5,10 @@
 #include <vector>
 #include <string.h>
 #include <map>
+#include <algorithm>
+#include <sstream>
+
+
 
 #define MAX_SEQUENCES 100
 
@@ -19,6 +23,7 @@ vector<string> sequences;
 int N;
 int n_sequences = 0;
 map <int, vector<tuple<int, int> >> classes_map;
+
 
 void readFile(char* path){
     file.open(path);
@@ -183,10 +188,60 @@ tuple_matrix rewriteSequenceList(vector<string> sequences){
     return res;
 }
 
+float distance(tuple_list s1, tuple_list s2){
+    vector<int> compared_classes = {};
+    float len, sum = 0;
+    tuple_list shortest;
+
+    if(s1.size() > s2.size()) shortest = s2;
+    else shortest = s1;
+
+    len = shortest.size();
+
+    for(int i  = 0; i < len; i++){
+        tuple<char, int> x = shortest.at(i);
+        if(count(compared_classes.begin(), compared_classes.end(), get<1>(x))) continue;
+        compared_classes.push_back(get<1>(x));
+        int u = count(s1.begin(), s1.end(), x);
+        int v = count(s2.begin(), s2.end(), x);
+        int min = std::min(u,v);
+        sum += min;
+    }
+    return (1-sum/len);
+}
+
+tuple_matrix read_rewritten_sequences(){
+    tuple_matrix res = {};
+
+    file.open("rewritten.txt");
+    if(!file.is_open()) exit(EXIT_FAILURE);
+    
+    string line;
+    n_sequences = 0;
+    while(getline(file, line)){
+        res.push_back({});
+        while(!line.empty()){
+            string tmp;
+            stringstream ss(line);
+            while(getline(ss, tmp, ' ')){
+                char letter = tmp[0];
+                string numbers = tmp.substr(1, tmp.size()-1);
+                int n =  stoi(numbers);
+                res.at(n_sequences).push_back({letter,n});
+            }
+            getline(file, line);
+        }
+        n_sequences++;
+    }
+
+    return res;
+}
 
 int main(){
-    readFile("nef.fsa");
-    N = 5;
+    //readFile("nef.fsa");
+    //N = 5;
+    
+    /*
     tuple_matrix res = rewriteSequenceList(sequences);
     ofstream file;
     file.open("rewritten.txt");
@@ -196,8 +251,14 @@ int main(){
             file << get<0>(res.at(i).at(j)) << get<1>(res.at(i).at(j)) << " ";
             if(j % 20 == 0 && j != 0) file << endl;
         }
-        cout << endl << endl;
+        file << endl << endl;
     }
     file.close();
+    */
+    tuple_matrix rewritten_sequences;
+    rewritten_sequences = read_rewritten_sequences();
+
+    float d = distance(rewritten_sequences.at(0), rewritten_sequences.at(1));
+    cout << "DISTANCE BETWEEN S0 AND S1: " << d << endl;
     return 0;
 }
