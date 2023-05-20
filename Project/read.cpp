@@ -1,3 +1,10 @@
+/*
+
+    INCLUDE DESCRIPTION
+
+*/
+
+//Libraries used in the work
 #include <iostream>
 #include <fstream>
 #include <cstdlib>
@@ -7,25 +14,30 @@
 #include <map>
 #include <algorithm>
 #include <sstream>
+#include <bits/stdc++.h>
+#include <algorithm>
 
 
 
 #define MAX_SEQUENCES 100
-
 using namespace std;
 
-typedef vector<tuple<char,int> > tuple_list;
+//Defining some types that will be used later on
+typedef vector<tuple<char,int>> tuple_list;
 typedef vector<vector<tuple<char, int> >> tuple_matrix;
+typedef vector<vector<float>> diss_matrix;
 
-ifstream file;
+//Global variables
 vector<string> sequences;
-
+tuple_matrix rewritten_sequences;
+vector<string> sequence_names;
 int N;
 int n_sequences = 0;
 map <int, vector<tuple<int, int> >> classes_map;
 
-
+//Reading original sequences
 void readFile(char* path){
+    ifstream file;
     file.open(path);
     if(!file.is_open()){
         exit(EXIT_FAILURE);
@@ -39,14 +51,173 @@ void readFile(char* path){
                 sequences[n_sequences] += line;
                 getline(file, line);
             }
-            //cout << "sequence  " << endl << sequences[n_sequences] << endl << endl; 
             n_sequences++;
+        }else{
+            sequence_names.push_back(line);
         }
     }
 }
 
+//Cluster structure for hierarchichal clustering
+struct Cluster {
+    int id;
+    vector<int> members;
+    float dist;
+    Cluster *left;
+    Cluster *right;
+};
+
+//Merging 2 clusters together
+Cluster *merge_clusters(Cluster *c1, Cluster *c2, float dist) {
+    Cluster *new_cluster = new Cluster;
+    new_cluster->id = -1;
+    new_cluster->members.reserve(c1->members.size() + c2->members.size());
+    new_cluster->members.insert(new_cluster->members.end(), c1->members.begin(), c1->members.end());
+    new_cluster->members.insert(new_cluster->members.end(), c2->members.begin(), c2->members.end());
+    new_cluster->dist = dist;
+    new_cluster->left = c1;
+    new_cluster->right = c2;
+    return new_cluster;
+}
 
 
+//Calculating distance between 2 sequences
+float distance(tuple_list s1, tuple_list s2){
+    vector<int> compared_classes = {};
+    float len, sum = 0;
+    tuple_list shortest;
+
+    if(s1.size() > s2.size()) shortest = s2;
+    else shortest = s1;
+
+    len = shortest.size();
+
+    for(int i  = 0; i < len; i++){
+        tuple<char, int> x = shortest.at(i);
+        if(count(compared_classes.begin(), compared_classes.end(), get<1>(x))) continue;
+        compared_classes.push_back(get<1>(x));
+        int u = count(s1.begin(), s1.end(), x);
+        int v = count(s2.begin(), s2.end(), x);
+        int min = std::min(u,v);
+        sum += min;
+    }
+    return (1-sum/len);
+}
+
+//Getting a sequence representative of a cluster.
+tuple_list majority_chain(Cluster cluster){
+    tuple_list majority;
+    int min_size = std::numeric_limits<int>::max();
+
+    //First we get the shortest sequence from the cluster
+    for(int i = 0; i < cluster.members.size(); i++){
+        int idx = cluster.members.at(i);
+        if(rewritten_sequences.at(idx).size() < min_size) {min_size = rewritten_sequences.at(idx).size();}
+    }
+
+
+    //We iterate over the minimun chain size
+    for(int i = 0; i < min_size; i++){
+        map<tuple<char, int>, int> frequency_map;
+        //Get the frequency of the different classes for position i
+        for(int j = 0; j < cluster.members.size(); j++){
+            int idx = cluster.members.at(j);
+            tuple<char, int> class_i = rewritten_sequences.at(idx).at(i);
+            if(frequency_map.count(class_i) > 0){ frequency_map.at(class_i) = frequency_map.at(class_i) + 1;}
+            else{frequency_map[class_i] = 1;}
+        }
+        //Get the most frequent class
+        int max_frequency = 0;
+        tuple<char, int> most_frequent;
+        for(auto k : frequency_map){
+            if(k.second > max_frequency){
+                max_frequency = k.second;
+                most_frequent = k.first;
+            }
+        }
+        majority.push_back(most_frequent);
+    }
+
+    return majority;
+
+}
+
+//Hierarchical clustering algorithm
+Cluster *hierarchical_clustering(const vector<vector<float>> &dissimilarity_matrix) {
+    size_t n = dissimilarity_matrix.size();
+    vector<Cluster*> clusters(n);
+    for (size_t i = 0; i < n; ++i) {
+        clusters[i] = new Cluster;
+        clusters[i]->id = i;
+        clusters[i]->members.push_back(i);
+        clusters[i]->dist = 0;
+        clusters[i]->left = nullptr;
+        clusters[i]->right = nullptr;
+    }
+ 
+    while (clusters.size() > 1) {
+        cout << "Looping" << endl;
+        float min_dist = numeric_limits<float>::max();
+        size_t min_i = 0, min_j = 0;
+
+        for (size_t i = 0; i < clusters.size(); ++i) {
+            for (size_t j = i + 1; j < clusters.size(); ++j) {
+                float dist;
+                if (clusters.at(i)->members.size() == 1 && clusters.at(j)->members.size()){
+                    int idx_i = clusters.at(i)->members.at(0);
+                    int idx_j = clusters.at(j)->members.at(0);
+                    dist = dissimilarity_matrix.at(idx_i).at(idx_j);
+                }else{
+                    tuple_list new_chain_i = majority_chain(*clusters.at(i));
+                    tuple_list new_chain_j = majority_chain(*clusters.at(j));
+                    dist = distance(new_chain_i, new_chain_j);
+                }
+                /*
+                int i_id = clusters[i]->members[0];
+                int j_id = clusters[j]->members[0];
+                float dist = dissimilarity_matrix[i_id][j_id];
+                */
+                if (dist < min_dist) {
+                    min_dist = dist;
+                    min_i = i;
+                    min_j = j;
+                }
+                
+            }
+        }
+
+        Cluster *merged_cluster = merge_clusters(clusters[min_i], clusters[min_j], min_dist);
+        clusters[min_i] = merged_cluster;
+        clusters.erase(clusters.begin() + min_j);
+    }
+ 
+    return clusters[0];
+}
+
+
+//Visualizing hierarchical clustering tree
+void print_cluster(const Cluster *cluster, ofstream &file, int level = 0) {
+
+    
+    if (!cluster) return;
+
+    
+    for (int i = 0; i < level; ++i) {
+        file << "  ";
+    }
+    
+
+    file << "Cluster " << (cluster->id != -1 ? to_string(cluster->id) : "(merged)");
+    file << " - Members: ";
+    for (int member : cluster->members) {
+        file << sequence_names.at(member) << " ";
+    }
+    file << " - Distance: " << cluster->dist << endl;
+    print_cluster(cluster->left, file, level + 1);
+    print_cluster(cluster->right, file, level + 1);
+}
+
+//Rewritting sequences using N-local decoding
 tuple_list rewriteSequence(string sequence){
 
     //Clasify all sites to class 0 (unclassified)
@@ -108,7 +279,7 @@ tuple_list rewriteSequence(string sequence){
     return res;
 }
 
-
+//Rewritting all sequences using N-local decoding
 tuple_matrix rewriteSequenceList(vector<string> sequences){
 
     //We have a matrix for storing the results, each row corresponding to the sites of a sequence
@@ -188,32 +359,27 @@ tuple_matrix rewriteSequenceList(vector<string> sequences){
     return res;
 }
 
-float distance(tuple_list s1, tuple_list s2){
-    vector<int> compared_classes = {};
-    float len, sum = 0;
-    tuple_list shortest;
-
-    if(s1.size() > s2.size()) shortest = s2;
-    else shortest = s1;
-
-    len = shortest.size();
-
-    for(int i  = 0; i < len; i++){
-        tuple<char, int> x = shortest.at(i);
-        if(count(compared_classes.begin(), compared_classes.end(), get<1>(x))) continue;
-        compared_classes.push_back(get<1>(x));
-        int u = count(s1.begin(), s1.end(), x);
-        int v = count(s2.begin(), s2.end(), x);
-        int min = std::min(u,v);
-        sum += min;
+//Computing de dissimilarity matrix over all sequences
+diss_matrix ComputeDissimilarityMatrix(tuple_matrix sequences){
+    diss_matrix res;
+    int len = sequences.size();
+    for(int i = 0; i < len; i++){
+        vector<float> v(len, 0);
+        res.push_back(v);
+        for(int j = i+1; j < len; j++){
+            res.at(i).at(j) = distance(sequences.at(i), sequences.at(j));
+        }
     }
-    return (1-sum/len);
+    return res;
 }
 
+//Reading rewritten sequences
 tuple_matrix read_rewritten_sequences(){
+    ifstream file;
+
     tuple_matrix res = {};
 
-    file.open("rewritten.txt");
+    file.open("rewritten1.txt");
     if(!file.is_open()) exit(EXIT_FAILURE);
     
     string line;
@@ -237,28 +403,103 @@ tuple_matrix read_rewritten_sequences(){
     return res;
 }
 
+//Reading dissimilarity matrix
+diss_matrix read_diss_matrix(){
+    ifstream file;
+
+    diss_matrix matrix;
+    file.open("dissmatrix.txt");
+
+    if(!file.is_open()) exit(EXIT_FAILURE);
+    int i = 0;
+    string line;
+    while(getline(file, line)){
+        matrix.push_back({});
+        string tmp;
+        stringstream ss(line);
+        //int j = 0;
+        while(getline(ss, tmp, ' ')){
+            float n = stof(tmp);
+            matrix.at(i).push_back(n);
+        }
+        i++;
+    }
+
+    return matrix;
+}
+
 int main(){
-    //readFile("nef.fsa");
-    //N = 5;
-    
+    //Reading the sequences to save the names
+    readFile("nef.fsa");
     /*
+    N = 15;
+    
     tuple_matrix res = rewriteSequenceList(sequences);
     ofstream file;
-    file.open("rewritten.txt");
+    file.open("rewritten1.txt");
     for(int i = 0; i < res.size(); i++){
-        for (int j = 0; j < res.at(i).size(); j++)
+        int j;
+        for (j = 0; j < res.at(i).size(); j++)
         {
-            file << get<0>(res.at(i).at(j)) << get<1>(res.at(i).at(j)) << " ";
-            if(j % 20 == 0 && j != 0) file << endl;
+            if(j % 20 == 0 && j != 0){
+                file << get<0>(res.at(i).at(j)) << get<1>(res.at(i).at(j));
+                file << endl;
+            }else{
+                file << get<0>(res.at(i).at(j)) << get<1>(res.at(i).at(j)) << " ";
+            }
+
         }
-        file << endl << endl;
+        if((j-1) % 20 == 0){
+            file << endl;
+        }else{
+            file << endl << endl;
+        }
+    }
+    file.close();*/
+    
+    //We read the rewritten sequences
+    rewritten_sequences = read_rewritten_sequences();
+
+    
+    
+    //float d = distance(rewritten_sequences.at(0), rewritten_sequences.at(3));
+
+    /*
+    ofstream file;
+    file.open("dissmatrix.txt");
+    diss_matrix diss =  ComputeDissimilarityMatrix(rewritten_sequences);
+    for(int i = 0; i < diss.size(); i++){
+        for(int j = 0; j < diss.size(); j++){
+            file << fixed << setprecision(5) << diss.at(i).at(j) << " ";
+        }
+        file << endl;
     }
     file.close();
     */
-    tuple_matrix rewritten_sequences;
-    rewritten_sequences = read_rewritten_sequences();
 
-    float d = distance(rewritten_sequences.at(0), rewritten_sequences.at(1));
-    cout << "DISTANCE BETWEEN S0 AND S1: " << d << endl;
+    //Reading the already computed dissimilarity matrix
+    diss_matrix matrix = read_diss_matrix();
+
+    /*
+    for(int i = 0; i < matrix.size(); i++){
+        for (int j = 0; j < matrix.size(); j++){
+            cout << matrix.at(i).at(j) << " ";
+        }
+        cout << endl;
+    }
+    */
+
+    //Performing hierarchical clustering
+    Cluster *root = hierarchical_clustering(matrix);
+
+    ofstream file;
+    file.open("dendogram.txt");
+
+    print_cluster(root, file);
+
+    file.close();
+
+
     return 0;
+    
 }
