@@ -1,0 +1,131 @@
+Cluster (merged) - Members: >AF004885_HIV-1-M/A1 >AF069670_HIV-1-M/A1 >U51190_HIV-1-M/A1 >M62320_HIV-1-M/A1 >AF005496_HIV-1-M/H >AF190127_HIV-1-M/H >AF190128_HIV-1-M/H >U52953_HIV-1-M/C >AF005494_HIV-1-M/F1 >AF075703_HIV-1-M/F1 >AF077336_HIV-1-M/F1 >AJ249236_HIV-1-M/F2 >AJ249237_HIV-1-M/F2 >AJ249238_HIV-1-M/F1 >AF061640_HIV-1-M/G >AF061642_HIV-1-M/G >U88826_HIV-1-M/G >AF084936_HIV-1-M/G >K02013_HIV-1-M/B >K03455_HIV-1-M/B >K02083_HIV-1-M/B >M19921_HIV-1-M/B >X01762_HIV-1-M/B >M17449_HIV-1-M/B >M26727_HIV-1-M/B >M17451_HIV-1-M/B >U21135_HIV-1-M/B >K03454_HIV-1-M/D >M22639_HIV-1-M/D >M27323_HIV-1-M/D >U88822_HIV-1-M/D >U88824_HIV-1-M/D >K02007_HIV-1-M/B >U63632_HIV-1-M/B >AF286237_HIV-1-M/A2 >AF286238_HIV-1-M/A2 >AJ249235_HIV-1-M/K >AJ249239_HIV-1-M/K >AF082394_HIV-1-M/J >AF082395_HIV-1-M/J >AF067155_HIV-1-M/C >AF110967_HIV-1-M/C >U46016_HIV-1-M/C >AJ006022_HIV-1-N >AJ271370_HIV-1-N >AF103818_SIV-CPZ-US >AF115393_SIV-CPZ-CAM3 >AJ271369_SIV-CPZ-CAM5 >X52154_SIV-CPZ-GAB >AJ302647_HIV-1-O >L20587_HIV-1-O >L20571_HIV-1-O >L07625_HIV-2-B >X61240_HIV-2-B >AF208027_HIV-2-G >X14307_SIV-SMM >U42720_SIV-CPZ-ANT >M19499_SIV-SMM-MAC >D00835_HIV-2-A >J03654_HIV-2-A >X05291_HIV-2-A >J04498_HIV-2-A >J04542_HIV-2-A >M30502_HIV-2-A >M30895_HIV-2-A >M31113_HIV-2-A  - Distance: 1
+  Cluster (merged) - Members: >AF004885_HIV-1-M/A1 >AF069670_HIV-1-M/A1 >U51190_HIV-1-M/A1 >M62320_HIV-1-M/A1 >AF005496_HIV-1-M/H >AF190127_HIV-1-M/H >AF190128_HIV-1-M/H >U52953_HIV-1-M/C >AF005494_HIV-1-M/F1 >AF075703_HIV-1-M/F1 >AF077336_HIV-1-M/F1 >AJ249236_HIV-1-M/F2 >AJ249237_HIV-1-M/F2 >AJ249238_HIV-1-M/F1 >AF061640_HIV-1-M/G >AF061642_HIV-1-M/G >U88826_HIV-1-M/G >AF084936_HIV-1-M/G >K02013_HIV-1-M/B >K03455_HIV-1-M/B >K02083_HIV-1-M/B >M19921_HIV-1-M/B >X01762_HIV-1-M/B >M17449_HIV-1-M/B >M26727_HIV-1-M/B >M17451_HIV-1-M/B >U21135_HIV-1-M/B >K03454_HIV-1-M/D >M22639_HIV-1-M/D >M27323_HIV-1-M/D >U88822_HIV-1-M/D >U88824_HIV-1-M/D >K02007_HIV-1-M/B >U63632_HIV-1-M/B >AF286237_HIV-1-M/A2 >AF286238_HIV-1-M/A2 >AJ249235_HIV-1-M/K >AJ249239_HIV-1-M/K >AF082394_HIV-1-M/J >AF082395_HIV-1-M/J >AF067155_HIV-1-M/C >AF110967_HIV-1-M/C >U46016_HIV-1-M/C >AJ006022_HIV-1-N >AJ271370_HIV-1-N >AF103818_SIV-CPZ-US >AF115393_SIV-CPZ-CAM3 >AJ271369_SIV-CPZ-CAM5 >X52154_SIV-CPZ-GAB >AJ302647_HIV-1-O >L20587_HIV-1-O >L20571_HIV-1-O >L07625_HIV-2-B >X61240_HIV-2-B >AF208027_HIV-2-G >X14307_SIV-SMM >U42720_SIV-CPZ-ANT >M19499_SIV-SMM-MAC >D00835_HIV-2-A >J03654_HIV-2-A >X05291_HIV-2-A >J04498_HIV-2-A >J04542_HIV-2-A >M30502_HIV-2-A >M30895_HIV-2-A  - Distance: 0.934932
+    Cluster (merged) - Members: >AF004885_HIV-1-M/A1 >AF069670_HIV-1-M/A1 >U51190_HIV-1-M/A1 >M62320_HIV-1-M/A1 >AF005496_HIV-1-M/H >AF190127_HIV-1-M/H >AF190128_HIV-1-M/H >U52953_HIV-1-M/C >AF005494_HIV-1-M/F1 >AF075703_HIV-1-M/F1 >AF077336_HIV-1-M/F1 >AJ249236_HIV-1-M/F2 >AJ249237_HIV-1-M/F2 >AJ249238_HIV-1-M/F1 >AF061640_HIV-1-M/G >AF061642_HIV-1-M/G >U88826_HIV-1-M/G >AF084936_HIV-1-M/G >K02013_HIV-1-M/B >K03455_HIV-1-M/B >K02083_HIV-1-M/B >M19921_HIV-1-M/B >X01762_HIV-1-M/B >M17449_HIV-1-M/B >M26727_HIV-1-M/B >M17451_HIV-1-M/B >U21135_HIV-1-M/B >K03454_HIV-1-M/D >M22639_HIV-1-M/D >M27323_HIV-1-M/D >U88822_HIV-1-M/D >U88824_HIV-1-M/D >K02007_HIV-1-M/B >U63632_HIV-1-M/B >AF286237_HIV-1-M/A2 >AF286238_HIV-1-M/A2 >AJ249235_HIV-1-M/K >AJ249239_HIV-1-M/K >AF082394_HIV-1-M/J >AF082395_HIV-1-M/J >AF067155_HIV-1-M/C >AF110967_HIV-1-M/C >U46016_HIV-1-M/C >AJ006022_HIV-1-N >AJ271370_HIV-1-N  - Distance: 0.726027
+      Cluster (merged) - Members: >AF004885_HIV-1-M/A1 >AF069670_HIV-1-M/A1 >U51190_HIV-1-M/A1 >M62320_HIV-1-M/A1 >AF005496_HIV-1-M/H >AF190127_HIV-1-M/H >AF190128_HIV-1-M/H >U52953_HIV-1-M/C >AF005494_HIV-1-M/F1 >AF075703_HIV-1-M/F1 >AF077336_HIV-1-M/F1 >AJ249236_HIV-1-M/F2 >AJ249237_HIV-1-M/F2 >AJ249238_HIV-1-M/F1 >AF061640_HIV-1-M/G >AF061642_HIV-1-M/G >U88826_HIV-1-M/G >AF084936_HIV-1-M/G >K02013_HIV-1-M/B >K03455_HIV-1-M/B >K02083_HIV-1-M/B >M19921_HIV-1-M/B >X01762_HIV-1-M/B >M17449_HIV-1-M/B >M26727_HIV-1-M/B >M17451_HIV-1-M/B >U21135_HIV-1-M/B >K03454_HIV-1-M/D >M22639_HIV-1-M/D >M27323_HIV-1-M/D >U88822_HIV-1-M/D >U88824_HIV-1-M/D >K02007_HIV-1-M/B >U63632_HIV-1-M/B >AF286237_HIV-1-M/A2 >AF286238_HIV-1-M/A2 >AJ249235_HIV-1-M/K >AJ249239_HIV-1-M/K >AF082394_HIV-1-M/J >AF082395_HIV-1-M/J >AF067155_HIV-1-M/C >AF110967_HIV-1-M/C >U46016_HIV-1-M/C  - Distance: 0.609589
+        Cluster (merged) - Members: >AF004885_HIV-1-M/A1 >AF069670_HIV-1-M/A1 >U51190_HIV-1-M/A1 >M62320_HIV-1-M/A1 >AF005496_HIV-1-M/H >AF190127_HIV-1-M/H >AF190128_HIV-1-M/H >U52953_HIV-1-M/C >AF005494_HIV-1-M/F1 >AF075703_HIV-1-M/F1 >AF077336_HIV-1-M/F1 >AJ249236_HIV-1-M/F2 >AJ249237_HIV-1-M/F2 >AJ249238_HIV-1-M/F1 >AF061640_HIV-1-M/G >AF061642_HIV-1-M/G >U88826_HIV-1-M/G >AF084936_HIV-1-M/G >K02013_HIV-1-M/B >K03455_HIV-1-M/B >K02083_HIV-1-M/B >M19921_HIV-1-M/B >X01762_HIV-1-M/B >M17449_HIV-1-M/B >M26727_HIV-1-M/B >M17451_HIV-1-M/B >U21135_HIV-1-M/B >K03454_HIV-1-M/D >M22639_HIV-1-M/D >M27323_HIV-1-M/D >U88822_HIV-1-M/D >U88824_HIV-1-M/D >K02007_HIV-1-M/B >U63632_HIV-1-M/B >AF286237_HIV-1-M/A2 >AF286238_HIV-1-M/A2 >AJ249235_HIV-1-M/K >AJ249239_HIV-1-M/K >AF082394_HIV-1-M/J >AF082395_HIV-1-M/J  - Distance: 0.513699
+          Cluster (merged) - Members: >AF004885_HIV-1-M/A1 >AF069670_HIV-1-M/A1 >U51190_HIV-1-M/A1 >M62320_HIV-1-M/A1 >AF005496_HIV-1-M/H >AF190127_HIV-1-M/H >AF190128_HIV-1-M/H >U52953_HIV-1-M/C >AF005494_HIV-1-M/F1 >AF075703_HIV-1-M/F1 >AF077336_HIV-1-M/F1 >AJ249236_HIV-1-M/F2 >AJ249237_HIV-1-M/F2 >AJ249238_HIV-1-M/F1 >AF061640_HIV-1-M/G >AF061642_HIV-1-M/G >U88826_HIV-1-M/G >AF084936_HIV-1-M/G >K02013_HIV-1-M/B >K03455_HIV-1-M/B >K02083_HIV-1-M/B >M19921_HIV-1-M/B >X01762_HIV-1-M/B >M17449_HIV-1-M/B >M26727_HIV-1-M/B >M17451_HIV-1-M/B >U21135_HIV-1-M/B >K03454_HIV-1-M/D >M22639_HIV-1-M/D >M27323_HIV-1-M/D >U88822_HIV-1-M/D >U88824_HIV-1-M/D >K02007_HIV-1-M/B >U63632_HIV-1-M/B >AF286237_HIV-1-M/A2 >AF286238_HIV-1-M/A2 >AJ249235_HIV-1-M/K >AJ249239_HIV-1-M/K  - Distance: 0.44863
+            Cluster (merged) - Members: >AF004885_HIV-1-M/A1 >AF069670_HIV-1-M/A1 >U51190_HIV-1-M/A1 >M62320_HIV-1-M/A1 >AF005496_HIV-1-M/H >AF190127_HIV-1-M/H >AF190128_HIV-1-M/H >U52953_HIV-1-M/C >AF005494_HIV-1-M/F1 >AF075703_HIV-1-M/F1 >AF077336_HIV-1-M/F1 >AJ249236_HIV-1-M/F2 >AJ249237_HIV-1-M/F2 >AJ249238_HIV-1-M/F1 >AF061640_HIV-1-M/G >AF061642_HIV-1-M/G >U88826_HIV-1-M/G >AF084936_HIV-1-M/G >K02013_HIV-1-M/B >K03455_HIV-1-M/B >K02083_HIV-1-M/B >M19921_HIV-1-M/B >X01762_HIV-1-M/B >M17449_HIV-1-M/B >M26727_HIV-1-M/B >M17451_HIV-1-M/B >U21135_HIV-1-M/B >K03454_HIV-1-M/D >M22639_HIV-1-M/D >M27323_HIV-1-M/D >U88822_HIV-1-M/D >U88824_HIV-1-M/D >K02007_HIV-1-M/B >U63632_HIV-1-M/B >AF286237_HIV-1-M/A2 >AF286238_HIV-1-M/A2  - Distance: 0.417808
+              Cluster (merged) - Members: >AF004885_HIV-1-M/A1 >AF069670_HIV-1-M/A1 >U51190_HIV-1-M/A1 >M62320_HIV-1-M/A1 >AF005496_HIV-1-M/H >AF190127_HIV-1-M/H >AF190128_HIV-1-M/H >U52953_HIV-1-M/C >AF005494_HIV-1-M/F1 >AF075703_HIV-1-M/F1 >AF077336_HIV-1-M/F1 >AJ249236_HIV-1-M/F2 >AJ249237_HIV-1-M/F2 >AJ249238_HIV-1-M/F1 >AF061640_HIV-1-M/G >AF061642_HIV-1-M/G >U88826_HIV-1-M/G >AF084936_HIV-1-M/G >K02013_HIV-1-M/B >K03455_HIV-1-M/B >K02083_HIV-1-M/B >M19921_HIV-1-M/B >X01762_HIV-1-M/B >M17449_HIV-1-M/B >M26727_HIV-1-M/B >M17451_HIV-1-M/B >U21135_HIV-1-M/B >K03454_HIV-1-M/D >M22639_HIV-1-M/D >M27323_HIV-1-M/D >U88822_HIV-1-M/D >U88824_HIV-1-M/D >K02007_HIV-1-M/B >U63632_HIV-1-M/B  - Distance: 0.335616
+                Cluster (merged) - Members: >AF004885_HIV-1-M/A1 >AF069670_HIV-1-M/A1 >U51190_HIV-1-M/A1 >M62320_HIV-1-M/A1 >AF005496_HIV-1-M/H >AF190127_HIV-1-M/H >AF190128_HIV-1-M/H >U52953_HIV-1-M/C  - Distance: 0.393496
+                  Cluster (merged) - Members: >AF004885_HIV-1-M/A1 >AF069670_HIV-1-M/A1 >U51190_HIV-1-M/A1 >M62320_HIV-1-M/A1  - Distance: 0.328455
+                    Cluster (merged) - Members: >AF004885_HIV-1-M/A1 >AF069670_HIV-1-M/A1 >U51190_HIV-1-M/A1  - Distance: 0.26829
+                      Cluster 0 - Members: >AF004885_HIV-1-M/A1  - Distance: 0
+                      Cluster (merged) - Members: >AF069670_HIV-1-M/A1 >U51190_HIV-1-M/A1  - Distance: 0.22439
+                        Cluster 6 - Members: >AF069670_HIV-1-M/A1  - Distance: 0
+                        Cluster 55 - Members: >U51190_HIV-1-M/A1  - Distance: 0
+                    Cluster 51 - Members: >M62320_HIV-1-M/A1  - Distance: 0
+                  Cluster (merged) - Members: >AF005496_HIV-1-M/H >AF190127_HIV-1-M/H >AF190128_HIV-1-M/H >U52953_HIV-1-M/C  - Distance: 0.365539
+                    Cluster (merged) - Members: >AF005496_HIV-1-M/H >AF190127_HIV-1-M/H >AF190128_HIV-1-M/H  - Distance: 0.28986
+                      Cluster 2 - Members: >AF005496_HIV-1-M/H  - Distance: 0
+                      Cluster (merged) - Members: >AF190127_HIV-1-M/H >AF190128_HIV-1-M/H  - Distance: 0.25962
+                        Cluster 15 - Members: >AF190127_HIV-1-M/H  - Distance: 0
+                        Cluster 16 - Members: >AF190128_HIV-1-M/H  - Distance: 0
+                    Cluster 56 - Members: >U52953_HIV-1-M/C  - Distance: 0
+                Cluster (merged) - Members: >AF005494_HIV-1-M/F1 >AF075703_HIV-1-M/F1 >AF077336_HIV-1-M/F1 >AJ249236_HIV-1-M/F2 >AJ249237_HIV-1-M/F2 >AJ249238_HIV-1-M/F1 >AF061640_HIV-1-M/G >AF061642_HIV-1-M/G >U88826_HIV-1-M/G >AF084936_HIV-1-M/G >K02013_HIV-1-M/B >K03455_HIV-1-M/B >K02083_HIV-1-M/B >M19921_HIV-1-M/B >X01762_HIV-1-M/B >M17449_HIV-1-M/B >M26727_HIV-1-M/B >M17451_HIV-1-M/B >U21135_HIV-1-M/B >K03454_HIV-1-M/D >M22639_HIV-1-M/D >M27323_HIV-1-M/D >U88822_HIV-1-M/D >U88824_HIV-1-M/D >K02007_HIV-1-M/B >U63632_HIV-1-M/B  - Distance: 0.356164
+                  Cluster (merged) - Members: >AF005494_HIV-1-M/F1 >AF075703_HIV-1-M/F1 >AF077336_HIV-1-M/F1 >AJ249236_HIV-1-M/F2 >AJ249237_HIV-1-M/F2 >AJ249238_HIV-1-M/F1  - Distance: 0.333333
+                    Cluster (merged) - Members: >AF005494_HIV-1-M/F1 >AF075703_HIV-1-M/F1  - Distance: 0.12903
+                      Cluster 1 - Members: >AF005494_HIV-1-M/F1  - Distance: 0
+                      Cluster 7 - Members: >AF075703_HIV-1-M/F1  - Distance: 0
+                    Cluster (merged) - Members: >AF077336_HIV-1-M/F1 >AJ249236_HIV-1-M/F2 >AJ249237_HIV-1-M/F2 >AJ249238_HIV-1-M/F1  - Distance: 0.256667
+                      Cluster (merged) - Members: >AF077336_HIV-1-M/F1 >AJ249236_HIV-1-M/F2  - Distance: 0.165
+                        Cluster 8 - Members: >AF077336_HIV-1-M/F1  - Distance: 0
+                        Cluster 22 - Members: >AJ249236_HIV-1-M/F2  - Distance: 0
+                      Cluster (merged) - Members: >AJ249237_HIV-1-M/F2 >AJ249238_HIV-1-M/F1  - Distance: 0.255
+                        Cluster 23 - Members: >AJ249237_HIV-1-M/F2  - Distance: 0
+                        Cluster 24 - Members: >AJ249238_HIV-1-M/F1  - Distance: 0
+                  Cluster (merged) - Members: >AF061640_HIV-1-M/G >AF061642_HIV-1-M/G >U88826_HIV-1-M/G >AF084936_HIV-1-M/G >K02013_HIV-1-M/B >K03455_HIV-1-M/B >K02083_HIV-1-M/B >M19921_HIV-1-M/B >X01762_HIV-1-M/B >M17449_HIV-1-M/B >M26727_HIV-1-M/B >M17451_HIV-1-M/B >U21135_HIV-1-M/B >K03454_HIV-1-M/D >M22639_HIV-1-M/D >M27323_HIV-1-M/D >U88822_HIV-1-M/D >U88824_HIV-1-M/D >K02007_HIV-1-M/B >U63632_HIV-1-M/B  - Distance: 0.332192
+                    Cluster (merged) - Members: >AF061640_HIV-1-M/G >AF061642_HIV-1-M/G >U88826_HIV-1-M/G >AF084936_HIV-1-M/G >K02013_HIV-1-M/B >K03455_HIV-1-M/B >K02083_HIV-1-M/B >M19921_HIV-1-M/B >X01762_HIV-1-M/B >M17449_HIV-1-M/B >M26727_HIV-1-M/B >M17451_HIV-1-M/B >U21135_HIV-1-M/B >K03454_HIV-1-M/D >M22639_HIV-1-M/D >M27323_HIV-1-M/D >U88822_HIV-1-M/D >U88824_HIV-1-M/D  - Distance: 0.27564
+                      Cluster 3 - Members: >AF061640_HIV-1-M/G  - Distance: 0
+                      Cluster (merged) - Members: >AF061642_HIV-1-M/G >U88826_HIV-1-M/G >AF084936_HIV-1-M/G >K02013_HIV-1-M/B >K03455_HIV-1-M/B >K02083_HIV-1-M/B >M19921_HIV-1-M/B >X01762_HIV-1-M/B >M17449_HIV-1-M/B >M26727_HIV-1-M/B >M17451_HIV-1-M/B >U21135_HIV-1-M/B >K03454_HIV-1-M/D >M22639_HIV-1-M/D >M27323_HIV-1-M/D >U88822_HIV-1-M/D >U88824_HIV-1-M/D  - Distance: 0.253425
+                        Cluster (merged) - Members: >AF061642_HIV-1-M/G >U88826_HIV-1-M/G >AF084936_HIV-1-M/G  - Distance: 0.184295
+                          Cluster (merged) - Members: >AF061642_HIV-1-M/G >U88826_HIV-1-M/G  - Distance: 0.13141
+                            Cluster 4 - Members: >AF061642_HIV-1-M/G  - Distance: 0
+                            Cluster 60 - Members: >U88826_HIV-1-M/G  - Distance: 0
+                          Cluster 11 - Members: >AF084936_HIV-1-M/G  - Distance: 0
+                        Cluster (merged) - Members: >K02013_HIV-1-M/B >K03455_HIV-1-M/B >K02083_HIV-1-M/B >M19921_HIV-1-M/B >X01762_HIV-1-M/B >M17449_HIV-1-M/B >M26727_HIV-1-M/B >M17451_HIV-1-M/B >U21135_HIV-1-M/B >K03454_HIV-1-M/D >M22639_HIV-1-M/D >M27323_HIV-1-M/D >U88822_HIV-1-M/D >U88824_HIV-1-M/D  - Distance: 0.215753
+                          Cluster (merged) - Members: >K02013_HIV-1-M/B >K03455_HIV-1-M/B >K02083_HIV-1-M/B >M19921_HIV-1-M/B >X01762_HIV-1-M/B >M17449_HIV-1-M/B >M26727_HIV-1-M/B >M17451_HIV-1-M/B >U21135_HIV-1-M/B >K03454_HIV-1-M/D >M22639_HIV-1-M/D >M27323_HIV-1-M/D >U88822_HIV-1-M/D  - Distance: 0.232877
+                            Cluster (merged) - Members: >K02013_HIV-1-M/B >K03455_HIV-1-M/B >K02083_HIV-1-M/B >M19921_HIV-1-M/B >X01762_HIV-1-M/B >M17449_HIV-1-M/B >M26727_HIV-1-M/B >M17451_HIV-1-M/B >U21135_HIV-1-M/B  - Distance: 0.214984
+                              Cluster (merged) - Members: >K02013_HIV-1-M/B >K03455_HIV-1-M/B >K02083_HIV-1-M/B >M19921_HIV-1-M/B >X01762_HIV-1-M/B >M17449_HIV-1-M/B >M26727_HIV-1-M/B >M17451_HIV-1-M/B  - Distance: 0.196457
+                                Cluster (merged) - Members: >K02013_HIV-1-M/B >K03455_HIV-1-M/B >K02083_HIV-1-M/B >M19921_HIV-1-M/B >X01762_HIV-1-M/B >M17449_HIV-1-M/B >M26727_HIV-1-M/B  - Distance: 0.183575
+                                  Cluster (merged) - Members: >K02013_HIV-1-M/B >K03455_HIV-1-M/B >K02083_HIV-1-M/B >M19921_HIV-1-M/B >X01762_HIV-1-M/B >M17449_HIV-1-M/B  - Distance: 0.169082
+                                    Cluster (merged) - Members: >K02013_HIV-1-M/B >K03455_HIV-1-M/B >K02083_HIV-1-M/B >M19921_HIV-1-M/B >X01762_HIV-1-M/B  - Distance: 0.0305958
+                                      Cluster (merged) - Members: >K02013_HIV-1-M/B >K03455_HIV-1-M/B >K02083_HIV-1-M/B >M19921_HIV-1-M/B  - Distance: 0.0193237
+                                        Cluster (merged) - Members: >K02013_HIV-1-M/B >K03455_HIV-1-M/B  - Distance: 0.01127
+                                          Cluster 34 - Members: >K02013_HIV-1-M/B  - Distance: 0
+                                          Cluster 37 - Members: >K03455_HIV-1-M/B  - Distance: 0
+                                        Cluster (merged) - Members: >K02083_HIV-1-M/B >M19921_HIV-1-M/B  - Distance: 0.01449
+                                          Cluster 35 - Members: >K02083_HIV-1-M/B  - Distance: 0
+                                          Cluster 44 - Members: >M19921_HIV-1-M/B  - Distance: 0
+                                      Cluster 61 - Members: >X01762_HIV-1-M/B  - Distance: 0
+                                    Cluster 41 - Members: >M17449_HIV-1-M/B  - Distance: 0
+                                  Cluster 46 - Members: >M26727_HIV-1-M/B  - Distance: 0
+                                Cluster 42 - Members: >M17451_HIV-1-M/B  - Distance: 0
+                              Cluster 52 - Members: >U21135_HIV-1-M/B  - Distance: 0
+                            Cluster (merged) - Members: >K03454_HIV-1-M/D >M22639_HIV-1-M/D >M27323_HIV-1-M/D >U88822_HIV-1-M/D  - Distance: 0.15411
+                              Cluster (merged) - Members: >K03454_HIV-1-M/D >M22639_HIV-1-M/D >M27323_HIV-1-M/D  - Distance: 0.106164
+                                Cluster (merged) - Members: >K03454_HIV-1-M/D >M22639_HIV-1-M/D  - Distance: 0.07877
+                                  Cluster 36 - Members: >K03454_HIV-1-M/D  - Distance: 0
+                                  Cluster 45 - Members: >M22639_HIV-1-M/D  - Distance: 0
+                                Cluster 47 - Members: >M27323_HIV-1-M/D  - Distance: 0
+                              Cluster 58 - Members: >U88822_HIV-1-M/D  - Distance: 0
+                          Cluster 59 - Members: >U88824_HIV-1-M/D  - Distance: 0
+                    Cluster (merged) - Members: >K02007_HIV-1-M/B >U63632_HIV-1-M/B  - Distance: 0.11848
+                      Cluster 33 - Members: >K02007_HIV-1-M/B  - Distance: 0
+                      Cluster 57 - Members: >U63632_HIV-1-M/B  - Distance: 0
+              Cluster (merged) - Members: >AF286237_HIV-1-M/A2 >AF286238_HIV-1-M/A2  - Distance: 0.29186
+                Cluster 18 - Members: >AF286237_HIV-1-M/A2  - Distance: 0
+                Cluster 19 - Members: >AF286238_HIV-1-M/A2  - Distance: 0
+            Cluster (merged) - Members: >AJ249235_HIV-1-M/K >AJ249239_HIV-1-M/K  - Distance: 0.16586
+              Cluster 21 - Members: >AJ249235_HIV-1-M/K  - Distance: 0
+              Cluster 25 - Members: >AJ249239_HIV-1-M/K  - Distance: 0
+          Cluster (merged) - Members: >AF082394_HIV-1-M/J >AF082395_HIV-1-M/J  - Distance: 0.06209
+            Cluster 9 - Members: >AF082394_HIV-1-M/J  - Distance: 0
+            Cluster 10 - Members: >AF082395_HIV-1-M/J  - Distance: 0
+        Cluster (merged) - Members: >AF067155_HIV-1-M/C >AF110967_HIV-1-M/C >U46016_HIV-1-M/C  - Distance: 0.27197
+          Cluster 5 - Members: >AF067155_HIV-1-M/C  - Distance: 0
+          Cluster (merged) - Members: >AF110967_HIV-1-M/C >U46016_HIV-1-M/C  - Distance: 0.22917
+            Cluster 13 - Members: >AF110967_HIV-1-M/C  - Distance: 0
+            Cluster 54 - Members: >U46016_HIV-1-M/C  - Distance: 0
+      Cluster (merged) - Members: >AJ006022_HIV-1-N >AJ271370_HIV-1-N  - Distance: 0.27885
+        Cluster 20 - Members: >AJ006022_HIV-1-N  - Distance: 0
+        Cluster 27 - Members: >AJ271370_HIV-1-N  - Distance: 0
+    Cluster (merged) - Members: >AF103818_SIV-CPZ-US >AF115393_SIV-CPZ-CAM3 >AJ271369_SIV-CPZ-CAM5 >X52154_SIV-CPZ-GAB >AJ302647_HIV-1-O >L20587_HIV-1-O >L20571_HIV-1-O >L07625_HIV-2-B >X61240_HIV-2-B >AF208027_HIV-2-G >X14307_SIV-SMM >U42720_SIV-CPZ-ANT >M19499_SIV-SMM-MAC >D00835_HIV-2-A >J03654_HIV-2-A >X05291_HIV-2-A >J04498_HIV-2-A >J04542_HIV-2-A >M30502_HIV-2-A >M30895_HIV-2-A  - Distance: 0.821363
+      Cluster (merged) - Members: >AF103818_SIV-CPZ-US >AF115393_SIV-CPZ-CAM3 >AJ271369_SIV-CPZ-CAM5 >X52154_SIV-CPZ-GAB >AJ302647_HIV-1-O >L20587_HIV-1-O >L20571_HIV-1-O >L07625_HIV-2-B >X61240_HIV-2-B >AF208027_HIV-2-G >X14307_SIV-SMM >U42720_SIV-CPZ-ANT >M19499_SIV-SMM-MAC  - Distance: 0.695142
+        Cluster (merged) - Members: >AF103818_SIV-CPZ-US >AF115393_SIV-CPZ-CAM3 >AJ271369_SIV-CPZ-CAM5 >X52154_SIV-CPZ-GAB >AJ302647_HIV-1-O >L20587_HIV-1-O >L20571_HIV-1-O >L07625_HIV-2-B >X61240_HIV-2-B  - Distance: 0.69231
+          Cluster 12 - Members: >AF103818_SIV-CPZ-US  - Distance: 0
+          Cluster (merged) - Members: >AF115393_SIV-CPZ-CAM3 >AJ271369_SIV-CPZ-CAM5 >X52154_SIV-CPZ-GAB >AJ302647_HIV-1-O >L20587_HIV-1-O >L20571_HIV-1-O >L07625_HIV-2-B >X61240_HIV-2-B  - Distance: 0.631068
+            Cluster (merged) - Members: >AF115393_SIV-CPZ-CAM3 >AJ271369_SIV-CPZ-CAM5 >X52154_SIV-CPZ-GAB >AJ302647_HIV-1-O >L20587_HIV-1-O >L20571_HIV-1-O  - Distance: 0.608414
+              Cluster (merged) - Members: >AF115393_SIV-CPZ-CAM3 >AJ271369_SIV-CPZ-CAM5 >X52154_SIV-CPZ-GAB  - Distance: 0.61165
+                Cluster (merged) - Members: >AF115393_SIV-CPZ-CAM3 >AJ271369_SIV-CPZ-CAM5  - Distance: 0.40865
+                  Cluster 14 - Members: >AF115393_SIV-CPZ-CAM3  - Distance: 0
+                  Cluster 26 - Members: >AJ271369_SIV-CPZ-CAM5  - Distance: 0
+                Cluster 64 - Members: >X52154_SIV-CPZ-GAB  - Distance: 0
+              Cluster (merged) - Members: >AJ302647_HIV-1-O >L20587_HIV-1-O >L20571_HIV-1-O  - Distance: 0.537736
+                Cluster (merged) - Members: >AJ302647_HIV-1-O >L20587_HIV-1-O  - Distance: 0.37107
+                  Cluster 28 - Members: >AJ302647_HIV-1-O  - Distance: 0
+                  Cluster 40 - Members: >L20587_HIV-1-O  - Distance: 0
+                Cluster 39 - Members: >L20571_HIV-1-O  - Distance: 0
+            Cluster (merged) - Members: >L07625_HIV-2-B >X61240_HIV-2-B  - Distance: 0.50885
+              Cluster 38 - Members: >L07625_HIV-2-B  - Distance: 0
+              Cluster 65 - Members: >X61240_HIV-2-B  - Distance: 0
+        Cluster (merged) - Members: >AF208027_HIV-2-G >X14307_SIV-SMM >U42720_SIV-CPZ-ANT >M19499_SIV-SMM-MAC  - Distance: 0.552764
+          Cluster (merged) - Members: >AF208027_HIV-2-G >X14307_SIV-SMM >U42720_SIV-CPZ-ANT  - Distance: 0.623116
+            Cluster (merged) - Members: >AF208027_HIV-2-G >X14307_SIV-SMM  - Distance: 0.55436
+              Cluster 17 - Members: >AF208027_HIV-2-G  - Distance: 0
+              Cluster 63 - Members: >X14307_SIV-SMM  - Distance: 0
+            Cluster 53 - Members: >U42720_SIV-CPZ-ANT  - Distance: 0
+          Cluster 43 - Members: >M19499_SIV-SMM-MAC  - Distance: 0
+      Cluster (merged) - Members: >D00835_HIV-2-A >J03654_HIV-2-A >X05291_HIV-2-A >J04498_HIV-2-A >J04542_HIV-2-A >M30502_HIV-2-A >M30895_HIV-2-A  - Distance: 0.438306
+        Cluster (merged) - Members: >D00835_HIV-2-A >J03654_HIV-2-A >X05291_HIV-2-A >J04498_HIV-2-A  - Distance: 0.40884
+          Cluster 29 - Members: >D00835_HIV-2-A  - Distance: 0
+          Cluster (merged) - Members: >J03654_HIV-2-A >X05291_HIV-2-A >J04498_HIV-2-A  - Distance: 0.383057
+            Cluster (merged) - Members: >J03654_HIV-2-A >X05291_HIV-2-A  - Distance: 0.3628
+              Cluster 30 - Members: >J03654_HIV-2-A  - Distance: 0
+              Cluster 62 - Members: >X05291_HIV-2-A  - Distance: 0
+            Cluster 31 - Members: >J04498_HIV-2-A  - Distance: 0
+        Cluster (merged) - Members: >J04542_HIV-2-A >M30502_HIV-2-A >M30895_HIV-2-A  - Distance: 0.364583
+          Cluster (merged) - Members: >J04542_HIV-2-A >M30502_HIV-2-A  - Distance: 0.26357
+            Cluster 32 - Members: >J04542_HIV-2-A  - Distance: 0
+            Cluster 48 - Members: >M30502_HIV-2-A  - Distance: 0
+          Cluster 49 - Members: >M30895_HIV-2-A  - Distance: 0
+  Cluster 50 - Members: >M31113_HIV-2-A  - Distance: 0
