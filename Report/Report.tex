@@ -1,0 +1,220 @@
+%%%% Modèle proposé par henry.costedoat@universite-paris-saclay.fr %%%%
+%%%% Grand fan de LaTeX %%%%
+%%%% Inspiré par un modèle proposé par frederic.mazaleyrat@ens-paris-saclay.fr 
+
+%%%% 4 fevrier 2022  %%%%
+
+\documentclass[english,13pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+%\usepackage{fancyhdr}
+\usepackage{amssymb}
+\usepackage{color} % où xcolor selon l'installation
+\definecolor{BleuFonce}{RGB}{0,74,117}
+\usepackage{mdframed}
+\usepackage{multirow} %% Pour mettre un texte sur plusieurs rangées
+\usepackage{multicol} %% Pour mettre un texte sur plusieurs colonnes
+\usepackage{tikz}
+%\usepackage{graphicx}
+%\usepackage[absolute]{textpos} 
+%\usepackage{colortbl}
+\usepackage{array}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{float}
+%\usepackage{floatrow}
+%\usepackage{bashful}% pour gérer le scripting bash
+\usepackage{listing}
+%\usepackage{fullpage}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{lipsum}
+%\usepackage{wasysym}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{stmaryrd}
+\usepackage{enumitem}
+\usepackage{xfrac}
+\usepackage{dsfont}
+\usepackage{comment}
+%\usepackage{hhline}
+%\usepackage{scrextend}
+%\usepackage{keyval}
+%\usepackage{filecontents}
+\usepackage{pict2e}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+%\usepackage{parskip}
+%\usepackage[thinlines]{easytable}
+
+
+%---------- BIBLIO ----------%
+\usepackage[backend=biber,style=alphabetic,sorting=ynt]{biblatex}
+\addbibresource{biblio.bib} % import the bibliography file
+\addto{\captionsenglish}{\renewcommand{\bibname}{\textsc{References}}}
+
+
+%---------- For big table of contents ----------%
+\usepackage{tocloft}
+
+\renewcommand{\cfttoctitlefont}{\Huge\bfseries}% Similar to \chapter* in report
+\setlength{\cftbeforetoctitleskip}{50pt}% Similar to \chapter* in report
+\setlength{\cftaftertoctitleskip}{40pt}% Similar to \chapter* in report
+\addtolength{\cftsecnumwidth}{10pt}
+%-----------------------------------------------%
+
+\geometry{margin=2cm}
+
+\graphicspath{{./Images/}}
+
+
+%\renewcommand{\familydefault}{<font family>} % pour changer la police voir : https://latex-tutorial.com/changing-font-style/
+
+\algnewcommand\algorithmicvar{\textbf{Variables:}}
+\algnewcommand\Var{\item[\algorithmicvar]}
+
+
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem*{example}{Example}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{lemma}[theorem]{Lemma}
+
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+\newtheorem*{reminder}{Reminder}
+
+
+\newcommand{\I}[1]{\mathbb{#1}}
+\DeclareMathOperator{\sgn}{sgn}
+\renewcommand{\epsilon}{\varepsilon}
+\renewcommand{\emptyset}{\varnothing}
+
+
+%-------- Section Numbering -------%
+\renewcommand*{\thesection}{\Roman{section}.}
+\renewcommand*{\thesubsection}{\Roman{section}.\arabic{subsection}}
+
+
+
+
+
+\begin{document}
+
+\begin{titlepage}
+
+%\thispagestyle{empty}
+
+\newgeometry{left=6cm,bottom=0.5cm, top=0.25cm, right=1cm}
+
+\tikz[remember picture,overlay] \node[opacity=1,inner sep=0pt] at (2.2mm,-165mm){\includegraphics{Fond1.png}}; % Fond changeable 
+
+% fonte sans empattement pour la page de titre
+\fontfamily{fvs}\fontseries{m}\selectfont
+
+\color{white}
+
+ 
+%**************************************************************
+%********************  LOGO  DE  POLYTECH  ********************
+%****** CHANGER L'IMAGE POUR UN AUTRE POLYTECH QUE SACLAY *****
+%* VOIR LES LOGOS DISPONIBLES, ET REMPLACER LE NOM CI-DESSOUS *
+%**************************************************************
+
+\vspace{-5mm} % à ajuster en fonction de la hauteur du logo
+               % décalera le texte en dessous
+\flushright \includegraphics[width=70mm]{logo-ULB.jpg} % nom du logo du polytech
+
+\vspace{-23mm}
+
+\flushleft \includegraphics[height=19mm]{Images/VUB_RGB.png} %\caption{cghj}
+
+
+
+
+%*****************************************************
+%******************** TITRE **************************
+%*****************************************************
+\flushright
+\vspace{15mm} % à régler éventuellement
+\color{BleuFonce}
+\fontfamily{cmss}\fontseries{m}\fontsize{22}{26}\selectfont
+Review of `Comparing sequences without using alignments: application to
+HIV/SIV subtyping'
+
+\normalsize
+\color{black}
+%*****************************************************
+
+%\fontfamily{fvs}\fontseries{m}\fontsize{8}{12}\selectfont
+
+\vspace{1.5cm}
+\normalsize
+
+\textbf{Supervised by Prof. Mathieu Defrance (\textit{Machine Learning Group - ULB}) \\ \& Prof. Wim Vranken (\textit{Bioengineering Sciences Department - VUB})}
+
+\vspace{15mm}
+
+Master's in Computer Science\\  %% nom spécialité / enseignement
+
+\vspace{15mm}
+
+\Large 
+{\color{BleuFonce} \textbf{Tom\'as GUIJA VALIENTE}}\\
+{\color{BleuFonce} \textbf{Benjamin OBERTHÜR}}
+
+\vspace{20mm}
+
+\centering
+
+\hrule
+\begin{abstract}
+    \lipsum*[1]
+\end{abstract}
+\vspace*{3mm}
+\hrule
+
+\end{titlepage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\normalsize
+\tableofcontents
+
+\newpage
+
+
+\section{Introduction}
+
+This paper describes the problem in sequence comparison of the fact that when we want to compare a large number of sequences together, some types of sequence alteration like insertion or deletion are poorly - if ever - handled by classic sequence alignment methods. Intuitive ideas to solve this problem without alignment would be to look at the nucleotids or amino acids frequency, but this methods is not really meaningful, as sequences with similar frequencies can be a lot different. A more sophisticated - and more working - is dealing with what~\cite{didier_comparing_2007} calls $N$-words (in nowaday's litterature, we call them $k$-mers)
+
+\section{Material \& Method}
+
+\subsection{Data Sets}\label{ssec:DS}
+
+We used two different sequence sets to run our experiments: One given from the author of \cite{didier_comparing_2007}, and another that we retrieved ourselves, both coming from the data base maintened by the `Los Alamos National Laboratory'\footnote{https://www.hiv.lanl.gov}. The first set contains 66 sequences writen prior to 2007, and the second one has been created from the query to have 47 sequences sampled in 2016 in Germany (so that we look at mutations in a restrained place and time).
+
+
+\section{Experiments}
+
+ 
+
+
+
+\section{Results}
+
+
+\section{Conclusion}
+
+
+
+\newpage
+\addcontentsline{toc}{section}{References}
+\printbibliography
+
+\end{document}

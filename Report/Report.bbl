@@ -1,0 +1,94 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{ynt/global//global/global}
+    \entry{didier_comparing_2007}{article}{}
+      \name{author}{7}{}{%
+        {{hash=520b55d226040321651eb6c37251f26c}{%
+           family={Didier},
+           familyi={D\bibinitperiod},
+           given={Gilles},
+           giveni={G\bibinitperiod}}}%
+        {{hash=e3cb0faa2796b70687e86ccbb714a00b}{%
+           family={Debomy},
+           familyi={D\bibinitperiod},
+           given={Laurent},
+           giveni={L\bibinitperiod}}}%
+        {{hash=f86bb4f82e46cb243e924130b7ac7c38}{%
+           family={Pupin},
+           familyi={P\bibinitperiod},
+           given={Maude},
+           giveni={M\bibinitperiod}}}%
+        {{hash=7a56aedb5f6ad175a5340edc7bf6267e}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Ming},
+           giveni={M\bibinitperiod}}}%
+        {{hash=280fc413894b05721a852914f512e65c}{%
+           family={Grossmann},
+           familyi={G\bibinitperiod},
+           given={Alexander},
+           giveni={A\bibinitperiod}}}%
+        {{hash=a7c53e0ea44b9a876c1805fbc6140ab7}{%
+           family={Devauchelle},
+           familyi={D\bibinitperiod},
+           given={Claudine},
+           giveni={C\bibinitperiod}}}%
+        {{hash=e3bb3001d35fd52c201a535c0fd971c7}{%
+           family={Laprevotte},
+           familyi={L\bibinitperiod},
+           given={Ivan},
+           giveni={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{1033acbde91eeb92fa68943680240c9c}
+      \strng{fullhash}{cb9e0d62ab74d308ab20081873a84134}
+      \strng{bibnamehash}{1033acbde91eeb92fa68943680240c9c}
+      \strng{authorbibnamehash}{1033acbde91eeb92fa68943680240c9c}
+      \strng{authornamehash}{1033acbde91eeb92fa68943680240c9c}
+      \strng{authorfullhash}{cb9e0d62ab74d308ab20081873a84134}
+      \field{labelalpha}{Did+07}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{In general, the construction of trees is based on sequence alignments. This procedure, however, leads to loss of informationwhen parts of sequence alignments (for instance ambiguous regions) are deleted before tree building. To overcome this difficulty, one of us previously introduced a new and rapid algorithm that calculates dissimilarity matrices between sequences without preliminary alignment.}
+      \field{issn}{1471-2105}
+      \field{journaltitle}{BMC Bioinformatics}
+      \field{month}{1}
+      \field{number}{1}
+      \field{title}{Comparing sequences without using alignments: application to {HIV}/{SIV} subtyping}
+      \field{volume}{8}
+      \field{year}{2007}
+      \field{pages}{1}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1186/1471-2105-8-1
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1186/1471-2105-8-1
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1186/1471-2105-8-1
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
