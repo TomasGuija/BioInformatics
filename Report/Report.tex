@@ -11,9 +11,9 @@
 \usepackage{amsfonts}
 %\usepackage{fancyhdr}
 \usepackage{amssymb}
-\usepackage{color} % où xcolor selon l'installation
+\usepackage{xcolor} % où xcolor selon l'installation
 \definecolor{BleuFonce}{RGB}{0,74,117}
-\usepackage{mdframed}
+\usepackage[framemethod=tikz]{mdframed}
 \usepackage{multirow} %% Pour mettre un texte sur plusieurs rangées
 \usepackage{multicol} %% Pour mettre un texte sur plusieurs colonnes
 \usepackage{tikz}
@@ -82,13 +82,80 @@
 \newtheorem{proposition}{Proposition}[section]
 \newtheorem{corollary}{Corollary}[section]
 \newtheorem*{example}{Example}
-\newtheorem{definition}{Definition}[section]
+%\newtheorem{definition}{Definition}[section]
 \newtheorem{lemma}{Lemma}[section]
 
 \theoremstyle{remark}
 \newtheorem*{remark}{Remark}
 \newtheorem*{reminder}{Reminder}
 
+% \renewenvironment{definition}
+%   {\par\noindent\normalfont\textbf{Definition \thedefinition}\par\nopagebreak%
+%   \begin{mdframed}[
+%      linewidth=1pt,
+%      linecolor=black,
+%      bottomline=false,topline=false,rightline=false,
+%      innerrightmargin=0pt,innertopmargin=0pt,innerbottommargin=0pt,
+%      innerleftmargin=1em,% Distance between vertical rule & proof content
+%      skipabove=.5\baselineskip
+%    ]}
+%   {\end{mdframed}}
+
+
+
+\newtheoremstyle{defstyle}% Custom theorem style
+  {3pt}% Space above
+  {3pt}% Space below
+  {}% Body font
+  {}% Indent amount
+  {\bfseries}% Theorem head font
+  {.}% Punctuation after theorem head
+  {.5em}% Space after theorem head
+  {%
+    \thmname{#1}% Name of theorem
+    \thmnumber{ #2}% Number of theorem
+    \thmnote{ (#3)}% Optional note
+  }
+
+\theoremstyle{defstyle}
+\newtheorem{definition}{Definition}[section]
+
+\renewenvironment{definition}[1][]{
+    \refstepcounter{definition}% Increment the definition counter
+    \par\noindent\textbf{Definition \thedefinition}%
+    \if\relax\detokenize{#1}\relax\else~(#1)\fi\par\nopagebreak%
+    \begin{mdframed}[
+        linewidth=.8pt,
+        linecolor=darkgray,
+        bottomline=false,
+        topline=false,
+        rightline=false,
+        innerrightmargin=0pt,
+        innertopmargin=0pt,
+        innerbottommargin=0pt,
+        innerleftmargin=1em,% Distance between vertical rule & definition content
+        skipabove=.5\baselineskip
+    ]}
+    {\end{mdframed}}
+
+
+\renewenvironment{example}[1][]{
+    %{\refstepcounter{definition}% Increment the definition counter
+    \par\noindent\textbf{Example.}%
+    %\if\relax\detokenize{#1}\relax\else~(#1)\fi\par\nopagebreak%
+    \begin{mdframed}[
+        linewidth=.8pt,
+        linecolor=darkgray,
+        bottomline=false,
+        topline=false,
+        rightline=false,
+        innerrightmargin=0pt,
+        innertopmargin=0pt,
+        innerbottommargin=0pt,
+        innerleftmargin=1em,% Distance between vertical rule & definition content
+        skipabove=.5\baselineskip
+    ]}
+    {\end{mdframed}}
 
 \newcommand{\I}[1]{\mathbb{#1}}
 \DeclareMathOperator{\sgn}{sgn}
@@ -116,7 +183,7 @@
 \newpage
 
 \addcontentsline{toc}{section}{Notation}
-\section*{Notations}
+\section*{Notations}\label{sec:notation}
 
 \begin{table}[h!]
     \centering
@@ -134,7 +201,7 @@ This paper describes the problem in sequence comparison of the fact that when we
 
 \subsection{Local decoding method of order $N$}
 
-The first step of this analysis presented by~\cite{didier_comparing_2007} is the local decoding method of order $N$, or $N$-local decoding. 
+The first step of this analysis presented by~\cite{didier_comparing_2007} is the local decoding method of order $N$, or $N$-local decoding. \\
 
 \begin{definition}[$N$-words]\label{def:nword}
     In a sequence, a $N$-word is a \textbf{contiguous sub-sequence of size $N$} of the given sequence. The set of its $N$-words is the its sub-sequences of size $N$. 
@@ -144,7 +211,10 @@ The first step of this analysis presented by~\cite{didier_comparing_2007} is the
     The set of the 3-words of the sequence $AGTACGT$ is $AGT$, $GTA$, $TAC$, $ACG$, $CGT$.
 \end{example}
 
-Let $S = S_1 S_2 \ldots S_i \ldots S_{|S|}$ be a sequence, $i$ a site (or index) of $S$. For a given $N \in \I N^*$, we consider the set of $N$-words of $S$ covering the site $i$.
+\vspace{3mm}
+
+Let $S = S_1 S_2 \ldots S_i \ldots S_{|S|}$ be a sequence, $i$ a site (or index) of $S$. For a given $N \in \I N^*$, we consider the set of $N$-words of $S$ covering the site $i$.\\
+
 
 \begin{definition}[Direct relation]\label{def:direct_rel}
     Two sites are said \textbf{directly related} if they have the same position in two (or more) occurences of the same $N$-word.
@@ -184,15 +254,12 @@ Let $S = S_1 S_2 \ldots S_i \ldots S_{|S|}$ be a sequence, $i$ a site (or index)
     The 5-word TGGAC appears in both these sequences, and the site 11 in seq1 and 5 in seq2 are both in first position of the 5-word, so these two sites are \textbf{directly related}
 \end{example}
 
-\begin{definition}[Transitivity]
-    Let $\mathcal{R}$ be a binary relation. $\mathcal{R}$ is said to be \textbf{transitive} if it respects the following property~\cite{cauchy1821cours}:
+\begin{definition}[Transitivity and transitive closure]
+    Let $\mathcal{R}$ and $\mathcal{R}'$ be binary relations. $\mathcal{R}$ is said to be \textbf{transitive} if it respects the following property~\cite{cauchy1821cours}:
     \[
         a \mathcal{R} b \land b \mathcal{R} c \implies a \mathcal{R} c 
     \]
-\end{definition}
-
-\begin{definition}[Transitive closure]
-    Let $\mathcal{R}$ and $\mathcal{R}'$ be binary relations. $\mathcal{R}'$ is the \textbf{transitive closure} of $\mathcal{R}$ if~\cite{schroder1877operationskreis}:
+    $\mathcal{R}'$ is the \textbf{transitive closure} of $\mathcal{R}$ if~\cite{schroder1877operationskreis}:
     \[
         \forall a, \, b; \; a \mathcal{R} b \implies a \mathcal{R'} b
     \]
@@ -203,7 +270,7 @@ Let $S = S_1 S_2 \ldots S_i \ldots S_{|S|}$ be a sequence, $i$ a site (or index)
 \end{definition}
 
 \begin{definition}
-    We define the (simple) relation between two sites as the transitive closure of the direct relation. Therfore, we say that two sites are related of there is a (finite) chain of direct relations linking those sites
+    We define the (simple) relation between two sites as the transitive closure of the direct relation. Therefore, we say that two sites are related of there is a (finite) chain of direct relations linking those sites
 \end{definition}
 
 We can divide those sites in a partition of relation classes\footnote{The proof comes from the fact that the relation we described is an equivalence relation, i.e. it is reflexive, symmetric, and transitive}.~\cite{didier_comparing_2007} calls them $N$-classes.
@@ -215,21 +282,108 @@ We can divide those sites in a partition of relation classes\footnote{The proof 
     \]
 \end{definition}
 
+Therefore, by giving an unique identifier to each $N$-class, we can rename each site of the whole sequence by the nucleotid (or amino acid) followed by the identifier of the class it is in. Only, there can be sites that are not not related to any other site in any other sequence, making singleton $N$-classes. As it could be rapidly unreadable to have large number of identifiers, and having some that appear in only one site, we denote these sites only by there nucleotide or amino acid.
 
 
+\subsection{Dissimilarity matrix and clustering tree}\label{sseq:dissim}
+
+Now that we have our new sequences divided in disjoint $N$-classes of sites, we want to compare each sequence. For that, we need to choose a mesure of (dis)-similarity.~\cite{didier_comparing_2007} chose the one defined in~\cite{didier2006decoding}.\\
+
+Let's defining the following notation. $|s|_x$ is the number of occurences of the identifier $x$ in the sequence $s$. For each pair of sequence and identifier $(s, \, x)$, we compute the value of $|s|_x$.
+
+\begin{example}
+    We consider the following rewriten sequences:\\
+
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{r|l}
+            seq1 & $C \, A \, T_0 \, T_1 \, G_0 \, T_2 \, C_0 \, C_1 \, G \, C_2 \, T_3 \, G_1 \, G_2 \, A_0 \, C_3 \, C_4 \, A \, C \, A \, C \, C \, T_0 \, T_1 \, G_0 \, T_2 \, C_0 \, C_1 \, C \, T \, A$\\
+
+            seq2 & $C_5 \, A_1 \, C_6 \, T_4 \, T_3 \, G_1 \, G_2 \, A_0 \, C_3 \, A \, C \, A \, T \, A \, C \, C \, A \, T \, G \, C$\\
+
+            seq3 & $C_5 \, A_1 \, C_6 \, T_4 \, T_3 \, C \, T \, T \, T \, C \, C_2 \, T_3 \, G_1 \, G_2 \, A_0 \, C_3 \, C_4 \, T \, C \, C$
+        \end{tabular}
+        \caption{Rewriten sequence (picked from~\cite{didier_comparing_2007})}
+    \end{table}
+
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|*4{c|}}
+            \hline
+                  & seq1 & seq2 & seq3\\
+            \hline
+            $A_0$ &  1   &  1   &  1  \\
+            $A_1$ &  0   &  1   &  1  \\
+            $T_0$ &  2   &  0   &  0  \\
+            $T_1$ &  2   &  0   &  0  \\
+            $T_2$ &  2   &  0   &  0  \\
+            $T_3$ &  1   &  1   &  2  \\
+            $T_4$ &  0   &  1   &  1  \\
+            $C_0$ &  2   &  0   &  0  \\
+            $C_1$ &  2   &  0   &  0  \\
+            $C_2$ &  1   &  0   &  1  \\
+            $C_3$ &  1   &  1   &  1  \\
+            $C_4$ &  1   &  0   &  1  \\
+            $C_5$ &  0   &  1   &  1  \\
+            $C_6$ &  0   &  1   &  1  \\
+            $G_0$ &  2   &  0   &  0  \\
+            $G_1$ &  1   &  1   &  1  \\
+            $G_2$ &  1   &  1   &  1  \\
+            \hline
+        \end{tabular}
+        \caption{Count of each identified site in each sequence}
+    \end{table}
+\end{example}
+
+Then to compute the similarity between each sequences, we apply the following formula:
+\[
+    \text{sim}(\text{seq}, \, \text{seq}') = \frac{\sum_x \min(|\text{seq}|_x, \, |\text{seq}'|_x)}{\min(|\text{seq}|, \, |\text{seq}'|)}
+\]
+
+\begin{example}
+    for $i, \, j \in \{\text{seq1}, \, \text{seq2}, \, \text{seq3}\}$:
+    \[
+        \text{Sim} = {(\text{sim}(i, \, j))}_{i<j} =
+        \begin{pmatrix}
+            \_ & \frac{5}{20} & \frac{7}{20} \\
+               & \_ & \frac{9}{20} \\
+               &    & \_
+        \end{pmatrix}
+        =
+        \begin{pmatrix}
+            \_ & 0.25 & 0.35 \\
+               & \_ & 0.45 \\
+               &    & \_
+        \end{pmatrix}
+    \]
+\end{example}
+
+The dissimilarity (or distance) can easily be obtained by taking the complement to 1 of the similarity.
+
+\subsection{Clustering and trees}
+
+Now that we have our mesure of distance between sequences, we can perform an agglomerative hierarchical clustering~\cite{anderberg1973cluster} that can give us an idea of a potential mutative evolution of HIV and SIV, that can be interpreted as subtypes of these viruses. However, in order to perform this clustering, we need a method to compute the distance between clusters containing multiple sequences. The paper does not present one, so we add to design our own described in Subsection~\ref{ssec:merge} 
 
 
+\subsection{Bootstraping}
 
-\section{Material \& Method}
+{\color{red} \large TODO}
+
+\section{Material \& Method}\label{sec:mat_method}
 
 \subsection{Data Sets}\label{ssec:DS}
 
-We used two different sequence sets to run our experiments: one given from Gilles Didier, co-author of~\cite{didier_comparing_2007}, and another that we retrieved ourselves, both coming from the data base maintened by the `Los Alamos National Laboratory'\footnote{https://www.hiv.lanl.gov}. The first set contains 66 sequences writen prior to 2007, and the second one has been created from the query to have 47 sequences sampled in 2016 in Germany (so that we look at mutations in a restrained place and time).
+We used two different sequence sets to run our experiments: one given from Gilles Didier, co-author of~\cite{didier_comparing_2007}, and another that we retrieved ourselves, both coming from the data base maintened by the `Los Alamos National Laboratory'\footnote{\url{https://www.hiv.lanl.gov}}. The first set contains 66 sequences writen prior to 2007, and the second one has been created from the query to have 47 sequences sampled in 2016 in Germany (so that we look at mutations in a restrained place and time).
 
+\subsection{Cluster merging method}\label{ssec:merge}
+
+For our cluster merging method, we inspired ourselves of centroid linkage methods~\cite{duda1973pattern}. For a given cluster $\mathcal{C}$ containing more than one sequence, we create an artificial sequence, of the size of the shortest sequence of the cluster, defined as follows:
+\[
+    \widetilde{\text{seq}}_i = \arg \max_{s_i; \,s \in \mathcal C} \frac{s_i}{|\mathcal C|},  \quad \forall i \in \llbracket 1, \, n \rrbracket, \, n = \min_{s \in \mathcal{C}} |s| 
+\]
+In a more natural language, for each site of the artificial sequence, we take the $N$-class appearing the most in the same site of the different sequences odf teh cluster. Obviously, there can be $N$-classes having the same frequency of occurence, therefore, we take the first element having the larger frequency. Then, to compute the distance between two clusters, we use the same formula as shown in Subsection~\ref{sseq:dissim}. 
 
 \section{Experiments}
-
- 
 
 
 

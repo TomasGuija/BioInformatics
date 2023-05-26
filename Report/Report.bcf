@@ -2352,10 +2352,19 @@
     <bcf:citekey order="6">schroder1877operationskreis</bcf:citekey>
     <bcf:citekey order="7">didier_comparing_2007</bcf:citekey>
     <bcf:citekey order="8">didier_comparing_2007</bcf:citekey>
-    <bcf:citekey order="9">didier_comparing_2007</bcf:citekey>
-    <bcf:citekey order="10">karlin1994comparisons</bcf:citekey>
-    <bcf:citekey order="11">cauchy1821cours</bcf:citekey>
-    <bcf:citekey order="12">schroder1877operationskreis</bcf:citekey>
+    <bcf:citekey order="9">didier2006decoding</bcf:citekey>
+    <bcf:citekey order="10">didier_comparing_2007</bcf:citekey>
+    <bcf:citekey order="11">didier_comparing_2007</bcf:citekey>
+    <bcf:citekey order="12">anderberg1973cluster</bcf:citekey>
+    <bcf:citekey order="13">didier_comparing_2007</bcf:citekey>
+    <bcf:citekey order="14">duda1973pattern</bcf:citekey>
+    <bcf:citekey order="15">didier_comparing_2007</bcf:citekey>
+    <bcf:citekey order="16">karlin1994comparisons</bcf:citekey>
+    <bcf:citekey order="17">cauchy1821cours</bcf:citekey>
+    <bcf:citekey order="18">schroder1877operationskreis</bcf:citekey>
+    <bcf:citekey order="19">didier2006decoding</bcf:citekey>
+    <bcf:citekey order="20">anderberg1973cluster</bcf:citekey>
+    <bcf:citekey order="21">duda1973pattern</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="ynt">

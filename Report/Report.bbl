@@ -79,6 +79,88 @@
       \field{title}{Der Operationskreis des Logikkalkiils}
       \field{year}{1877}
     \endentry
+    \entry{anderberg1973cluster}{incollection}{}
+      \name{author}{1}{}{%
+        {{hash=2ebf49322f6da610fc00857a95911d87}{%
+           family={Anderberg},
+           familyi={A\bibinitperiod},
+           given={Michael\bibnamedelima R.},
+           giveni={M\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \name{editor}{1}{}{%
+        {{hash=2ebf49322f6da610fc00857a95911d87}{%
+           family={Anderberg},
+           familyi={A\bibinitperiod},
+           given={Michael\bibnamedelima R.},
+           giveni={M\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Academic Press}%
+      }
+      \strng{namehash}{2ebf49322f6da610fc00857a95911d87}
+      \strng{fullhash}{2ebf49322f6da610fc00857a95911d87}
+      \strng{bibnamehash}{2ebf49322f6da610fc00857a95911d87}
+      \strng{authorbibnamehash}{2ebf49322f6da610fc00857a95911d87}
+      \strng{authornamehash}{2ebf49322f6da610fc00857a95911d87}
+      \strng{authorfullhash}{2ebf49322f6da610fc00857a95911d87}
+      \strng{editorbibnamehash}{2ebf49322f6da610fc00857a95911d87}
+      \strng{editornamehash}{2ebf49322f6da610fc00857a95911d87}
+      \strng{editorfullhash}{2ebf49322f6da610fc00857a95911d87}
+      \field{labelalpha}{And73}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Cluster Analysis for Applications}
+      \field{issn}{00795607}
+      \field{series}{Probability and Mathematical Statistics: A Series of Monographs and Textbooks}
+      \field{title}{CHAPTER 6 - HIERARCHICAL CLUSTERING METHODS}
+      \field{year}{1973}
+      \field{pages}{131\bibrangedash 155}
+      \range{pages}{25}
+      \verb{doi}
+      \verb https://doi.org/10.1016/B978-0-12-057650-0.50012-0
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/B9780120576500500120
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/B9780120576500500120
+      \endverb
+    \endentry
+    \entry{duda1973pattern}{book}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{2}{}{%
+        {{hash=972ec1d2535a1c1ea947c7b5fad399f6}{%
+           family={Duda},
+           familyi={D\bibinitperiod},
+           given={Richard\bibnamedelima O},
+           giveni={R\bibinitperiod\bibinitdelim O\bibinitperiod}}}%
+        {{hash=a9ce6ce2ae6a0f1ac64e4efe810d622c}{%
+           family={Hart},
+           familyi={H\bibinitperiod},
+           given={Peter\bibnamedelima E},
+           giveni={P\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Wiley New York}%
+      }
+      \strng{namehash}{3037e8fef6c74b6bc704fbe2470231ba}
+      \strng{fullhash}{3037e8fef6c74b6bc704fbe2470231ba}
+      \strng{bibnamehash}{3037e8fef6c74b6bc704fbe2470231ba}
+      \strng{authorbibnamehash}{3037e8fef6c74b6bc704fbe2470231ba}
+      \strng{authornamehash}{3037e8fef6c74b6bc704fbe2470231ba}
+      \strng{authorfullhash}{3037e8fef6c74b6bc704fbe2470231ba}
+      \field{labelalpha}{DH+73}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Pattern classification and scene analysis}
+      \field{volume}{3}
+      \field{year}{1973}
+    \endentry
     \entry{karlin1994comparisons}{article}{}
       \name{author}{2}{}{%
         {{hash=a11e93e0362df64e6137422fd4265757}{%
@@ -113,6 +195,63 @@
       \field{year}{1994}
       \field{pages}{12832\bibrangedash 12836}
       \range{pages}{5}
+    \endentry
+    \entry{didier2006decoding}{article}{}
+      \name{author}{4}{}{%
+        {{hash=520b55d226040321651eb6c37251f26c}{%
+           family={Didier},
+           familyi={D\bibinitperiod},
+           given={Gilles},
+           giveni={G\bibinitperiod}}}%
+        {{hash=e3bb3001d35fd52c201a535c0fd971c7}{%
+           family={Laprevotte},
+           familyi={L\bibinitperiod},
+           given={Ivan},
+           giveni={I\bibinitperiod}}}%
+        {{hash=f86bb4f82e46cb243e924130b7ac7c38}{%
+           family={Pupin},
+           familyi={P\bibinitperiod},
+           given={Maude},
+           giveni={M\bibinitperiod}}}%
+        {{hash=62ac046b146268edcd4a7b18b11bc25b}{%
+           family={Hénaut},
+           familyi={H\bibinitperiod},
+           given={Alain},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{1033acbde91eeb92fa68943680240c9c}
+      \strng{fullhash}{9cd359787fadc3a4060b640a46e4fe3b}
+      \strng{bibnamehash}{1033acbde91eeb92fa68943680240c9c}
+      \strng{authorbibnamehash}{1033acbde91eeb92fa68943680240c9c}
+      \strng{authornamehash}{1033acbde91eeb92fa68943680240c9c}
+      \strng{authorfullhash}{9cd359787fadc3a4060b640a46e4fe3b}
+      \field{extraname}{1}
+      \field{labelalpha}{Did+06}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Subword composition plays an important role in a lot of analyses of sequences. Here we define and study the "local decoding of order N of sequences," an alternative that avoids some drawbacks of "subwords of length N" approaches while keeping informations about environments of length N in the sequences ("decoding" is taken here in the sense of hidden Markov modeling, i.e., associating some state to all positions of the sequence). We present an algorithm for computing the local decoding of order N of a given set of sequences. Its complexity is linear in the total length of the set (whatever the order N) both in time and memory space. In order to show a use of local decoding, we propose a very basic dissimilarity measure between sequences which can be computed both from local decoding of order N and composition in subwords of length N. The accuracies of these two dissimilarities are evaluated, over several datasets, by computing their linear correlations with a reference alignment-based distance. These accuracies are also compared to the one obtained from another recent alignment-free comparison.}
+      \field{journaltitle}{Journal of Computational Biology}
+      \field{note}{PMID: 17061922}
+      \field{number}{8}
+      \field{title}{Local Decoding of Sequences and Alignment-Free Comparison}
+      \field{volume}{13}
+      \field{year}{2006}
+      \field{pages}{1465\bibrangedash 1476}
+      \range{pages}{12}
+      \verb{doi}
+      \verb 10.1089/cmb.2006.13.1465
+      \endverb
+      \verb{eprint}
+      \verb https://doi.org/10.1089/cmb.2006.13.1465
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1089/cmb.2006.13.1465
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1089/cmb.2006.13.1465
+      \endverb
     \endentry
     \entry{didier_comparing_2007}{article}{}
       \name{author}{7}{}{%
@@ -158,6 +297,7 @@
       \strng{authorbibnamehash}{1033acbde91eeb92fa68943680240c9c}
       \strng{authornamehash}{1033acbde91eeb92fa68943680240c9c}
       \strng{authorfullhash}{cb9e0d62ab74d308ab20081873a84134}
+      \field{extraname}{2}
       \field{labelalpha}{Did+07}
       \field{sortinit}{2}
       \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
