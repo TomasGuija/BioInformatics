@@ -19,6 +19,101 @@
 
 \refsection{0}
   \datalist[entry]{ynt/global//global/global}
+    \entry{cauchy1821cours}{book}{}
+      \name{author}{1}{}{%
+        {{hash=8495b42141aa0537d3c126985f420e06}{%
+           family={Cauchy},
+           familyi={C\bibinitperiod},
+           given={Augustin-Louis},
+           giveni={A\bibinithyphendelim L\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Imprimerie royale}%
+      }
+      \strng{namehash}{8495b42141aa0537d3c126985f420e06}
+      \strng{fullhash}{8495b42141aa0537d3c126985f420e06}
+      \strng{bibnamehash}{8495b42141aa0537d3c126985f420e06}
+      \strng{authorbibnamehash}{8495b42141aa0537d3c126985f420e06}
+      \strng{authornamehash}{8495b42141aa0537d3c126985f420e06}
+      \strng{authorfullhash}{8495b42141aa0537d3c126985f420e06}
+      \field{labelalpha}{Cau21}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{part}{1ère partie}
+      \field{subtitle}{Analyse algébrique}
+      \field{title}{Cours d'analyse de l'École royale polytechnique}
+      \field{year}{1821}
+    \endentry
+    \entry{schroder1877operationskreis}{book}{}
+      \name{author}{1}{}{%
+        {{hash=c9469030eabe58b21fe91180528a5ac4}{%
+           family={Schröder},
+           familyi={S\bibinitperiod},
+           given={Ernst},
+           giveni={E\bibinitperiod}}}%
+      }
+      \name{editor}{1}{}{%
+        {{hash=1dbc57dd2facbf5a26adcfc43e0f93d7}{%
+           family={Teubner-Verlag},
+           familyi={T\bibinithyphendelim V\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Leipzig}%
+      }
+      \strng{namehash}{c9469030eabe58b21fe91180528a5ac4}
+      \strng{fullhash}{c9469030eabe58b21fe91180528a5ac4}
+      \strng{bibnamehash}{c9469030eabe58b21fe91180528a5ac4}
+      \strng{authorbibnamehash}{c9469030eabe58b21fe91180528a5ac4}
+      \strng{authornamehash}{c9469030eabe58b21fe91180528a5ac4}
+      \strng{authorfullhash}{c9469030eabe58b21fe91180528a5ac4}
+      \strng{editorbibnamehash}{1dbc57dd2facbf5a26adcfc43e0f93d7}
+      \strng{editornamehash}{1dbc57dd2facbf5a26adcfc43e0f93d7}
+      \strng{editorfullhash}{1dbc57dd2facbf5a26adcfc43e0f93d7}
+      \field{labelalpha}{Sch77}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Der Operationskreis des Logikkalkiils}
+      \field{year}{1877}
+    \endentry
+    \entry{karlin1994comparisons}{article}{}
+      \name{author}{2}{}{%
+        {{hash=a11e93e0362df64e6137422fd4265757}{%
+           family={Karlin},
+           familyi={K\bibinitperiod},
+           given={Samuel},
+           giveni={S\bibinitperiod}}}%
+        {{hash=a9b1fabbbd2b325f9da50b9a7bc8cdb5}{%
+           family={Ladunga},
+           familyi={L\bibinitperiod},
+           given={Istvan},
+           giveni={I\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {National Acad Sciences}%
+      }
+      \strng{namehash}{18198c9d75055950db0e9e8655888d74}
+      \strng{fullhash}{18198c9d75055950db0e9e8655888d74}
+      \strng{bibnamehash}{18198c9d75055950db0e9e8655888d74}
+      \strng{authorbibnamehash}{18198c9d75055950db0e9e8655888d74}
+      \strng{authornamehash}{18198c9d75055950db0e9e8655888d74}
+      \strng{authorfullhash}{18198c9d75055950db0e9e8655888d74}
+      \field{labelalpha}{KL94}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of the National Academy of Sciences}
+      \field{number}{26}
+      \field{title}{Comparisons of eukaryotic genomic sequences.}
+      \field{volume}{91}
+      \field{year}{1994}
+      \field{pages}{12832\bibrangedash 12836}
+      \range{pages}{5}
+    \endentry
     \entry{didier_comparing_2007}{article}{}
       \name{author}{7}{}{%
         {{hash=520b55d226040321651eb6c37251f26c}{%

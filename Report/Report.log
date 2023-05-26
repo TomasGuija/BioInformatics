@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.11.19)  24 MAY 2023 18:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.11.19)  26 MAY 2023 00:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1061,13 +1061,17 @@ Package tocloft Info: The document has section divisions on input line 51.
 \cfttabnumwidth=\skip190
 )
 \c@theorem=\count479
+\c@proposition=\count480
+\c@corollary=\count481
+\c@definition=\count482
+\c@lemma=\count483
 
 
 Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 (biblatex)                Loading 'csquotes' recommended.
 
-\@quotelevel=\count480
-\@quotereset=\count481
+\@quotelevel=\count484
+\@quotereset=\count485
 
 LaTeX Warning: Unused global option(s):
     [13pt].
@@ -1095,16 +1099,16 @@ LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 107.
 LaTeX Font Info:    ... okay on input line 107.
  (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count482
+\scratchcounter=\count486
 \scratchdimen=\dimen313
 \scratchbox=\box122
-\nofMPsegments=\count483
-\nofMParguments=\count484
+\nofMPsegments=\count487
+\nofMParguments=\count488
 \everyMPshowfont=\toks47
-\MPscratchCnt=\count485
+\MPscratchCnt=\count489
 \MPscratchDim=\dimen314
-\MPnumerator=\count486
-\makeMPintoPDFobject=\count487
+\MPnumerator=\count490
+\makeMPintoPDFobject=\count491
 \everyMPtoPDFconversion=\toks48
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -1154,7 +1158,7 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ) (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count488
+\c@section@level=\count492
 )
 LaTeX Info: Redefining \ref on input line 107.
 LaTeX Info: Redefining \pageref on input line 107.
@@ -1180,6 +1184,7 @@ Package biblatex Info: ... file 'Report.bbl' found.
  (./Report.bbl)
 Package biblatex Info: Reference section=0 on input line 107.
 Package biblatex Info: Reference segment=0 on input line 107.
+ (./title.tex
 *geometry* verbose mode - [ newgeometry ] result:
 * driver: pdftex
 * paper: a4paper
@@ -1212,13 +1217,119 @@ Package biblatex Info: Reference segment=0 on input line 107.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<./Images//Fond1.png, id=34, 388.45125pt x 1087.06125pt>
+<./Images//Fond1.png, id=42, 388.45125pt x 1087.06125pt>
 File: ./Images//Fond1.png Graphic file (type png)
 <use ./Images//Fond1.png>
-Package pdftex.def Info: ./Images//Fond1.png  used on input line 115.
+Package pdftex.def Info: ./Images//Fond1.png  used on input line 7.
 (pdftex.def)             Requested size: 388.45029pt x 1087.0586pt.
-LaTeX Font Info:    Trying to load font information for T1+fvs on input line 118.
+LaTeX Font Info:    Trying to load font information for T1+fvs on input line 10.
  (/usr/share/texlive/texmf-dist/tex/latex/bera/t1fvs.fd
 File: t1fvs.fd 2004/09/07 scalable font definitions for T1/fvs.
 )
-<./Images//logo-ULB.jp
+<./Images//logo-ULB.jpg, id=43, 128.3997pt x 38.7849pt>
+File: ./Images//logo-ULB.jpg Graphic file (type jpg)
+<use ./Images//logo-ULB.jpg>
+Package pdftex.def Info: ./Images//logo-ULB.jpg  used on input line 23.
+(pdftex.def)             Requested size: 199.16928pt x 60.16565pt.
+<Images/VUB_RGB.png, id=44, 2059.695pt x 738.76pt>
+File: Images/VUB_RGB.png Graphic file (type png)
+<use Images/VUB_RGB.png>
+Package pdftex.def Info: Images/VUB_RGB.png  used on input line 27.
+(pdftex.def)             Requested size: 150.69905pt x 54.06023pt.
+
+
+Package xcolor Warning: Incompatible color definition on input line 37.
+
+LaTeX Font Info:    Trying to load font information for T1+cmss on input line 38.
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1cmss.fd
+File: t1cmss.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+)
+
+LaTeX Font Warning: Font shape `T1/cmss/m/n' in size <22> not available
+(Font)              size <20.74> substituted on input line 38.
+
+
+Package xcolor Warning: Incompatible color definition on input line 60.
+
+
+Package xcolor Warning: Incompatible color definition on input line 61.
+
+[1
+
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./Images//Fond1.png (PNG copy)> <./Images//logo-ULB.jpg> <./Images/VUB_RGB.png>]) (./Report.toc
+LaTeX Font Info:    Trying to load font information for U+msa on input line 2.
+ (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 2.
+ (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 2.
+ (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
+File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
+)
+LaTeX Font Info:    Trying to load font information for U+stmry on input line 2.
+ (/usr/share/texlive/texmf-dist/tex/latex/stmaryrd/Ustmry.fd))
+\tf@toc=\write7
+\openout7 = `Report.toc'.
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.116 \newpage
+               [1]
+Overfull \hbox (52.45273pt too wide) in paragraph at lines 123--129
+ [][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 133--134
+
+ []
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 135.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 135.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 154--155
+
+ []
+
+[2] [3]
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 245.
+ (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+) [4] (./Report.aux)
+
+LaTeX Font Warning: Size substitutions with differences
+(Font)              up to 1.26pt have occurred.
+
+Package rerunfilecheck Info: File `Report.out' has not changed.
+(rerunfilecheck)             Checksum: 27EC629BC69427D59273DBEFEA8A7759;1022.
+Package logreq Info: Writing requests to 'Report.run.xml'.
+\openout1 = `Report.run.xml'.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 34890 strings out of 478287
+ 661162 string characters out of 5849288
+ 1460394 words of memory out of 5000000
+ 52465 multiletter control sequences out of 15000+600000
+ 498833 words of font info for 90 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 100i,12n,104p,993b,1895s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx2488.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0600.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0700.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfso1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfss0900.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfss1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfss2074.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsx0900.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsx1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1000.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/stmaryrd/stmary10.pfb>
+Output written on Report.pdf (5 pages, 492481 bytes).
+PDF statistics:
+ 249 PDF objects out of 1000 (max. 8388607)
+ 182 compressed objects within 2 object streams
+ 27 named destinations out of 1000 (max. 500000)
+ 100 words of extra memory for PDF output out of 10000 (max. 10000000)
+

@@ -1,8 +1,10 @@
 \babel@toc {english}{}\relax 
+\contentsline {section}{Notation}{2}{Doc-Start}%
 \contentsline {section}{\numberline {I.}Introduction}{2}{section.1}%
-\contentsline {section}{\numberline {II.}Material \& Method}{2}{section.2}%
-\contentsline {subsection}{\numberline {II.1}Data Sets}{2}{subsection.2.1}%
-\contentsline {section}{\numberline {III.}Experiments}{2}{section.3}%
-\contentsline {section}{\numberline {IV.}Results}{2}{section.4}%
-\contentsline {section}{\numberline {V.}Conclusion}{2}{section.5}%
-\contentsline {section}{References}{3}{section.5}%
+\contentsline {subsection}{\numberline {I.1}Local decoding method of order $N$}{2}{subsection.1.1}%
+\contentsline {section}{\numberline {II.}Material \& Method}{3}{section.2}%
+\contentsline {subsection}{\numberline {II.1}Data Sets}{3}{subsection.2.1}%
+\contentsline {section}{\numberline {III.}Experiments}{3}{section.3}%
+\contentsline {section}{\numberline {IV.}Results}{3}{section.4}%
+\contentsline {section}{\numberline {V.}Conclusion}{3}{section.5}%
+\contentsline {section}{References}{4}{section.5}%

@@ -79,11 +79,11 @@
 
 \theoremstyle{definition}
 \newtheorem{theorem}{Theorem}[section]
-\newtheorem{proposition}[theorem]{Proposition}
-\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{corollary}{Corollary}[section]
 \newtheorem*{example}{Example}
-\newtheorem{definition}[theorem]{Definition}
-\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{lemma}{Lemma}[section]
 
 \theoremstyle{remark}
 \newtheorem*{remark}{Remark}
@@ -106,80 +106,7 @@
 
 \begin{document}
 
-\begin{titlepage}
-
-%\thispagestyle{empty}
-
-\newgeometry{left=6cm,bottom=0.5cm, top=0.25cm, right=1cm}
-
-\tikz[remember picture,overlay] \node[opacity=1,inner sep=0pt] at (2.2mm,-165mm){\includegraphics{Fond1.png}}; % Fond changeable 
-
-% fonte sans empattement pour la page de titre
-\fontfamily{fvs}\fontseries{m}\selectfont
-
-\color{white}
-
- 
-%**************************************************************
-%********************  LOGO  DE  POLYTECH  ********************
-%****** CHANGER L'IMAGE POUR UN AUTRE POLYTECH QUE SACLAY *****
-%* VOIR LES LOGOS DISPONIBLES, ET REMPLACER LE NOM CI-DESSOUS *
-%**************************************************************
-
-\vspace{-5mm} % à ajuster en fonction de la hauteur du logo
-               % décalera le texte en dessous
-\flushright \includegraphics[width=70mm]{logo-ULB.jpg} % nom du logo du polytech
-
-\vspace{-23mm}
-
-\flushleft \includegraphics[height=19mm]{Images/VUB_RGB.png} %\caption{cghj}
-
-
-
-
-%*****************************************************
-%******************** TITRE **************************
-%*****************************************************
-\flushright
-\vspace{15mm} % à régler éventuellement
-\color{BleuFonce}
-\fontfamily{cmss}\fontseries{m}\fontsize{22}{26}\selectfont
-Review of `Comparing sequences without using alignments: application to
-HIV/SIV subtyping'
-
-\normalsize
-\color{black}
-%*****************************************************
-
-%\fontfamily{fvs}\fontseries{m}\fontsize{8}{12}\selectfont
-
-\vspace{1.5cm}
-\normalsize
-
-\textbf{Supervised by Prof. Mathieu Defrance (\textit{Machine Learning Group - ULB}) \\ \& Prof. Wim Vranken (\textit{Bioengineering Sciences Department - VUB})}
-
-\vspace{15mm}
-
-Master's in Computer Science\\  %% nom spécialité / enseignement
-
-\vspace{15mm}
-
-\Large 
-{\color{BleuFonce} \textbf{Tom\'as GUIJA VALIENTE}}\\
-{\color{BleuFonce} \textbf{Benjamin OBERTHÜR}}
-
-\vspace{20mm}
-
-\centering
-
-\hrule
-\begin{abstract}
-    \lipsum*[1]
-\end{abstract}
-\vspace*{3mm}
-\hrule
-
-\end{titlepage}
+\input{title}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -188,16 +115,116 @@ Master's in Computer Science\\  %% nom spécialité / enseignement
 
 \newpage
 
+\addcontentsline{toc}{section}{Notation}
+\section*{Notations}
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{p{5cm} p{13cm}}
+        \hline
+        Notation & Meaning\\
+        \hline
+        $\llbracket \cdot, \, \cdot \rrbracket \: : \: \I N \times \I N \to \I N$ & Integer interval, $\llbracket a, \, b \rrbracket = \{a, \, a+1, \, \ldots, \, b\}$
+    \end{tabular}
+\end{table}
 
 \section{Introduction}
 
-This paper describes the problem in sequence comparison of the fact that when we want to compare a large number of sequences together, some types of sequence alteration like insertion or deletion are poorly - if ever - handled by classic sequence alignment methods. Intuitive ideas to solve this problem without alignment would be to look at the nucleotids or amino acids frequency, but this methods is not really meaningful, as sequences with similar frequencies can be a lot different. A more sophisticated - and more working - is dealing with what~\cite{didier_comparing_2007} calls $N$-words (in nowaday's litterature, we call them $k$-mers)
+This paper describes the problem in sequence comparison of the fact that when we want to compare a large number of sequences together, some types of sequence alteration like insertion or deletion are poorly - if ever - handled by classic sequence alignment methods. Intuitive ideas to solve this problem without alignment would be to look at the nucleotids or amino acids frequency, but this methods is not really meaningful, as sequences with similar frequencies can be a lot different. A more sophisticated - and more working - is dealing with what~\cite{didier_comparing_2007} calls $N$-words (in nowaday's litterature, we call them $k$-mers). With those, we can compute dissimilarities between sequences~\cite{karlin1994comparisons} which can help us show evolutionary relationships between sequences.\\
+
+\subsection{Local decoding method of order $N$}
+
+The first step of this analysis presented by~\cite{didier_comparing_2007} is the local decoding method of order $N$, or $N$-local decoding. 
+
+\begin{definition}[$N$-words]\label{def:nword}
+    In a sequence, a $N$-word is a \textbf{contiguous sub-sequence of size $N$} of the given sequence. The set of its $N$-words is the its sub-sequences of size $N$. 
+\end{definition}
+
+\begin{example}
+    The set of the 3-words of the sequence $AGTACGT$ is $AGT$, $GTA$, $TAC$, $ACG$, $CGT$.
+\end{example}
+
+Let $S = S_1 S_2 \ldots S_i \ldots S_{|S|}$ be a sequence, $i$ a site (or index) of $S$. For a given $N \in \I N^*$, we consider the set of $N$-words of $S$ covering the site $i$.
+
+\begin{definition}[Direct relation]\label{def:direct_rel}
+    Two sites are said \textbf{directly related} if they have the same position in two (or more) occurences of the same $N$-word.
+\end{definition}
+
+\begin{example}
+    (We take the example on Figure 6a in~\cite{didier_comparing_2007}). Let seq1 = CATTG T{\color{red} CCGC \textbf{T}GGAC} CACAC and seq2 = {\color{red} CACT\textbf{T} GGAC}A CATAC CATGC. We consider the site 11 in seq1 and the site 5 in seq2 (bolded in their definitions), and look at the 5-words covering this site (contained in the sites colored in red).\\
+
+    \begin{minipage}{.47\textwidth}
+        \begin{tabular}{*4c | c | *4c}
+            \cline{5-5}
+            C & C & G & C & \textbf{T} & G & G & A & C \\
+            \hline
+            C & C & G & C & T &   &   &   &  \\
+              & C & G & C & T & G &   &   &  \\
+              &   & G & C & T & G & G &   &  \\
+              &   &   & C & T & G & G & A &  \\
+              &   &   &   & \textbf{T} & \textbf{G} & \textbf{G} & \textbf{A} & \textbf{C} \\
+            \cline{5-5}
+        \end{tabular}
+    \end{minipage}
+    \begin{minipage}{.47\textwidth}
+        \begin{tabular}{*4c | c | *4c}
+            \cline{5-5}
+            C & A & C & T & \textbf{T} & G & G & A & C \\
+            \hline
+            C & A & C & T & T &   &   &   &  \\
+              & A & C & T & T & G &   &   &  \\
+              &   & C & T & T & G & G &   &  \\
+              &   &   & T & T & G & G & A &  \\
+              &   &   &   & \textbf{T} & \textbf{G} & \textbf{G} & \textbf{A} & \textbf{C} \\
+            \cline{5-5}
+        \end{tabular}
+    \end{minipage}
+
+    \noindent
+    The 5-word TGGAC appears in both these sequences, and the site 11 in seq1 and 5 in seq2 are both in first position of the 5-word, so these two sites are \textbf{directly related}
+\end{example}
+
+\begin{definition}[Transitivity]
+    Let $\mathcal{R}$ be a binary relation. $\mathcal{R}$ is said to be \textbf{transitive} if it respects the following property~\cite{cauchy1821cours}:
+    \[
+        a \mathcal{R} b \land b \mathcal{R} c \implies a \mathcal{R} c 
+    \]
+\end{definition}
+
+\begin{definition}[Transitive closure]
+    Let $\mathcal{R}$ and $\mathcal{R}'$ be binary relations. $\mathcal{R}'$ is the \textbf{transitive closure} of $\mathcal{R}$ if~\cite{schroder1877operationskreis}:
+    \[
+        \forall a, \, b; \; a \mathcal{R} b \implies a \mathcal{R'} b
+    \]
+    and
+    \[
+        \forall a, \, b, \, c; \; a \mathcal{R} b \land b \mathcal{R} c \implies a \mathcal{R'} c
+    \]
+\end{definition}
+
+\begin{definition}
+    We define the (simple) relation between two sites as the transitive closure of the direct relation. Therfore, we say that two sites are related of there is a (finite) chain of direct relations linking those sites
+\end{definition}
+
+We can divide those sites in a partition of relation classes\footnote{The proof comes from the fact that the relation we described is an equivalence relation, i.e. it is reflexive, symmetric, and transitive}.~\cite{didier_comparing_2007} calls them $N$-classes.
+
+\begin{definition}[$N$-classes]
+    An $N$-class can be defined as follows (with $a$ being the identifier of the $N$-class):
+    \[
+        C(a) = \{x \in \llbracket 1, \, |S| \rrbracket; \; x \text{ is related with } a\}
+    \]
+\end{definition}
+
+
+
+
+
 
 \section{Material \& Method}
 
 \subsection{Data Sets}\label{ssec:DS}
 
-We used two different sequence sets to run our experiments: One given from the author of \cite{didier_comparing_2007}, and another that we retrieved ourselves, both coming from the data base maintened by the `Los Alamos National Laboratory'\footnote{https://www.hiv.lanl.gov}. The first set contains 66 sequences writen prior to 2007, and the second one has been created from the query to have 47 sequences sampled in 2016 in Germany (so that we look at mutations in a restrained place and time).
+We used two different sequence sets to run our experiments: one given from Gilles Didier, co-author of~\cite{didier_comparing_2007}, and another that we retrieved ourselves, both coming from the data base maintened by the `Los Alamos National Laboratory'\footnote{https://www.hiv.lanl.gov}. The first set contains 66 sequences writen prior to 2007, and the second one has been created from the query to have 47 sequences sampled in 2016 in Germany (so that we look at mutations in a restrained place and time).
 
 
 \section{Experiments}
