@@ -47,6 +47,7 @@
 \usepackage{pict2e}
 \usepackage{algorithm}
 \usepackage{algpseudocode}
+
 %\usepackage{parskip}
 %\usepackage[thinlines]{easytable}
 
@@ -195,9 +196,9 @@
     \end{tabular}
 \end{table}
 
-\section{Introduction}
+\section{Introduction and summary of the article}\label{seq:summary}
 
-This paper describes the problem in sequence comparison of the fact that when we want to compare a large number of sequences together, some types of sequence alteration like insertion or deletion are poorly - if ever - handled by classic sequence alignment methods. Intuitive ideas to solve this problem without alignment would be to look at the nucleotids or amino acids frequency, but this methods is not really meaningful, as sequences with similar frequencies can be a lot different. A more sophisticated - and more working - is dealing with what~\cite{didier_comparing_2007} calls $N$-words (in nowaday's litterature, we call them $k$-mers). With those, we can compute dissimilarities between sequences~\cite{karlin1994comparisons} which can help us show evolutionary relationships between sequences.\\
+This article describes the problem in sequence comparison of the fact that when we want to compare a large number of sequences together, some types of sequence alteration like insertion or deletion are poorly - if ever - handled by classic sequence alignment methods. Intuitive ideas to solve this problem without alignment would be to look at the nucleotids or amino acids frequency, but this methods is not really meaningful, as sequences with similar frequencies can be a lot different. A more sophisticated - and more working - is dealing with what~\cite{didier_comparing_2007} calls $N$-words (in nowaday's litterature, we call them $k$-mers). With those, we can compute dissimilarities between sequences~\cite{karlin1994comparisons} which can help us show evolutionary relationships between sequences.\\
 
 \subsection{Local decoding method of order $N$}
 
@@ -345,15 +346,15 @@ Then to compute the similarity between each sequences, we apply the following fo
     \[
         \text{Sim} = {(\text{sim}(i, \, j))}_{i<j} =
         \begin{pmatrix}
-            \_ & \frac{5}{20} & \frac{7}{20} \\
-               & \_ & \frac{9}{20} \\
-               &    & \_
+            - & \frac{5}{20} & \frac{7}{20} \\
+               & - & \frac{9}{20} \\
+               &    & -
         \end{pmatrix}
         =
         \begin{pmatrix}
-            \_ & 0.25 & 0.35 \\
-               & \_ & 0.45 \\
-               &    & \_
+            - & 0.25 & 0.35 \\
+               & - & 0.45 \\
+               &    & -
         \end{pmatrix}
     \]
 \end{example}
@@ -362,18 +363,18 @@ The dissimilarity (or distance) can easily be obtained by taking the complement 
 
 \subsection{Clustering and trees}
 
-Now that we have our mesure of distance between sequences, we can perform an agglomerative hierarchical clustering~\cite{anderberg1973cluster} that can give us an idea of a potential mutative evolution of HIV and SIV, that can be interpreted as subtypes of these viruses. However, in order to perform this clustering, we need a method to compute the distance between clusters containing multiple sequences. The paper does not present one, so we add to design our own described in Subsection~\ref{ssec:merge} 
+Now that we have our mesure of distance between sequences, we can perform an agglomerative hierarchical clustering~\cite{anderberg1973cluster} that can give us an idea of a potential mutative evolution of HIV and SIV, that can be interpreted as subtypes of these viruses. However, in order to perform this clustering, we need a method to compute the distance between clusters containing multiple sequences. The article does not present one, so we add to design our own described in Subsection~\ref{ssec:merge} 
 
 
-\subsection{Bootstraping}
+\subsection{Bootstrapping}
 
-{\color{red} \large TODO}
+Finally, in order to have more confidence in the results, the authors use the statistical technique of `bootstrapping'~\cite{efron1979bootstrap}. In the sequence comparison case, the method proposed in~\cite{felsenstein1980confidence} was considered and adapted to local decoded sequences. The motivation to use this method is that the obtaind results may have some degree of uncertainty due to the noise of limitations in the data. Therefore, from the input data, we create an artificial set of sequence replicates. For a given sequence of the original data, we create an random replicate of the same size by randomly picking (sampling with replacement) and concatenating sites of the original data. After this artificial sets has been created, we can run the same analysis we made on the original set on our new set, and judge of the stability of our method with the new result. 
 
 \section{Material \& Method}\label{sec:mat_method}
 
 \subsection{Data Sets}\label{ssec:DS}
 
-We used two different sequence sets to run our experiments: one given from Gilles Didier, co-author of~\cite{didier_comparing_2007}, and another that we retrieved ourselves, both coming from the data base maintened by the `Los Alamos National Laboratory'\footnote{\url{https://www.hiv.lanl.gov}}. The first set contains 66 sequences writen prior to 2007, and the second one has been created from the query to have 47 sequences sampled in 2016 in Germany (so that we look at mutations in a restrained place and time).
+We used two different sequence sets to run our experiments: one given from Gilles Didier, co-author of~\cite{didier_comparing_2007}, and another that we retrieved ourselves, both coming from the data base maintened by the `Los Alamos National Laboratory'\footnote{\url{https://www.hiv.lanl.gov}}. The first set contains 66 sequences writen prior to 2007~\footnote{The sequences presented in figure 1 of~\cite{didier_comparing_2007}, with 4 missing sequences}, and the second one has been created from the query to have 47 sequences sampled in 2016 in Germany (so that we look at mutations in a restrained place and time).
 
 \subsection{Cluster merging method}\label{ssec:merge}
 
@@ -383,14 +384,64 @@ For our cluster merging method, we inspired ourselves of centroid linkage method
 \]
 In a more natural language, for each site of the artificial sequence, we take the $N$-class appearing the most in the same site of the different sequences odf teh cluster. Obviously, there can be $N$-classes having the same frequency of occurence, therefore, we take the first element having the larger frequency. Then, to compute the distance between two clusters, we use the same formula as shown in Subsection~\ref{sseq:dissim}. 
 
-\section{Experiments}
 
 
+\section{Experiments and Results}
 
-\section{Results}
+\subsection{Original set of sequence}
+
+\subsubsection{Comparison of the clustering trees}
+
+We applied the procedure described in the summary (Section~\ref{seq:summary}). The obtained dissimilarity matrix of the set of sequences can be found in the \texttt{dissmatrix\_\_66\_sequences.txt} file in the repository, as it does not fit in a single to be readable. You can find the associated cluster tree of this dissimilarity matrix in Figure~\ref{fig:tree66}, in the Appendix, following the cluster tree of the original article in Figure~\ref{fig:original_tree66}.\\
+
+When looking at both the figures, we can see that they are very alike. Let's take the following sequences in example:
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Images/Example_66.png}
+        \caption{Part of the generated tree}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Images/Example_Orig66.png}
+        \caption{Part of the original tree}
+    \end{subfigure}
+\end{figure}
+
+We can see on these parts of the trees that the only difference is that, on the generated tree, the sequences \texttt{M62320} and \texttt{AF004885} are `siblings' (i.e. formed a cluster alone together at some point of the hierarchical clustering), where in the original tree, they are one `generation' apart. These kind of changes can be explained by the fact that our clustering method are probably not the same, the one of the article not being presented, and by the fact that we miss 4 sequences from the original set.\\
+
+The only potentially significant difference between our two trees is that, in ours, the sequence \texttt{M31113} is directly linked to the root, with no direct sibling, when it is a lot more deeply inserted in the original tree. 
+
+\subsubsection{Bootstrapping}
+
+We performed 10 different bootstraps in order to see if our method is reliable. You can find the 10 trees at the following path: \texttt{Trees/Bootstraps\_66\_sequences}. All the trees have the same structure, with 3 blocks of sequences never mixing up between themselves, plus the sequence \texttt{M31113} that always has the same position in all the bootstrap trees. We can still notice some permutations between sequences in the different blocks. Those permutations stay in the deeper half of the tree for the `large block'.
+
 
 
 \section{Conclusion}
+
+
+\newpage
+
+\section*{Appendix}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{../Trees/original_66_tree.png}
+    \caption{Original tree obtained from the dissimilarity matrix of the sequences of the original article, with $N = 15$}
+    \label{fig:original_tree66}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.95\textheight, angle=90]{../Trees/66_tree.png}
+    \caption{Tree obtained from the dissimilarity matrix of the sequences of the original article, with $N = 15$}
+    \label{fig:tree66}
+\end{figure}
+
 
 
 

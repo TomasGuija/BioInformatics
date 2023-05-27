@@ -161,6 +161,68 @@
       \field{volume}{3}
       \field{year}{1973}
     \endentry
+    \entry{efron1979bootstrap}{article}{}
+      \name{author}{1}{}{%
+        {{hash=32a20599d34d0c1c6a39fab839c5ae95}{%
+           family={Efron},
+           familyi={E\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{32a20599d34d0c1c6a39fab839c5ae95}
+      \strng{fullhash}{32a20599d34d0c1c6a39fab839c5ae95}
+      \strng{bibnamehash}{32a20599d34d0c1c6a39fab839c5ae95}
+      \strng{authorbibnamehash}{32a20599d34d0c1c6a39fab839c5ae95}
+      \strng{authornamehash}{32a20599d34d0c1c6a39fab839c5ae95}
+      \strng{authorfullhash}{32a20599d34d0c1c6a39fab839c5ae95}
+      \field{labelalpha}{Efr79}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Ann. Statist.}
+      \field{number}{1}
+      \field{title}{Bootstrap Methods: Another Look at the Jackknife}
+      \field{volume}{7}
+      \field{year}{1979}
+      \field{pages}{1\bibrangedash 26}
+      \range{pages}{26}
+      \verb{urlraw}
+      \verb http://dml.mathdoc.fr/item/1176344552
+      \endverb
+      \verb{url}
+      \verb http://dml.mathdoc.fr/item/1176344552
+      \endverb
+    \endentry
+    \entry{felsenstein1980confidence}{article}{}
+      \name{author}{1}{}{%
+        {{hash=730691dc48548fb3b49f75ef513f757d}{%
+           family={Felsenstein},
+           familyi={F\bibinitperiod},
+           given={J},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{730691dc48548fb3b49f75ef513f757d}
+      \strng{fullhash}{730691dc48548fb3b49f75ef513f757d}
+      \strng{bibnamehash}{730691dc48548fb3b49f75ef513f757d}
+      \strng{authorbibnamehash}{730691dc48548fb3b49f75ef513f757d}
+      \strng{authornamehash}{730691dc48548fb3b49f75ef513f757d}
+      \strng{authorfullhash}{730691dc48548fb3b49f75ef513f757d}
+      \field{labelalpha}{Fel80}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Evolution}
+      \field{title}{Confidence intervals on phylogenies: an approach using bootstrap}
+      \field{volume}{39}
+      \field{year}{1980}
+      \field{pages}{1792\bibrangedash 1797}
+      \range{pages}{6}
+    \endentry
     \entry{karlin1994comparisons}{article}{}
       \name{author}{2}{}{%
         {{hash=a11e93e0362df64e6137422fd4265757}{%

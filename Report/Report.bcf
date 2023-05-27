@@ -2356,15 +2356,20 @@
     <bcf:citekey order="10">didier_comparing_2007</bcf:citekey>
     <bcf:citekey order="11">didier_comparing_2007</bcf:citekey>
     <bcf:citekey order="12">anderberg1973cluster</bcf:citekey>
-    <bcf:citekey order="13">didier_comparing_2007</bcf:citekey>
-    <bcf:citekey order="14">duda1973pattern</bcf:citekey>
+    <bcf:citekey order="13">efron1979bootstrap</bcf:citekey>
+    <bcf:citekey order="14">felsenstein1980confidence</bcf:citekey>
     <bcf:citekey order="15">didier_comparing_2007</bcf:citekey>
-    <bcf:citekey order="16">karlin1994comparisons</bcf:citekey>
-    <bcf:citekey order="17">cauchy1821cours</bcf:citekey>
-    <bcf:citekey order="18">schroder1877operationskreis</bcf:citekey>
-    <bcf:citekey order="19">didier2006decoding</bcf:citekey>
-    <bcf:citekey order="20">anderberg1973cluster</bcf:citekey>
-    <bcf:citekey order="21">duda1973pattern</bcf:citekey>
+    <bcf:citekey order="16">didier_comparing_2007</bcf:citekey>
+    <bcf:citekey order="17">duda1973pattern</bcf:citekey>
+    <bcf:citekey order="18">didier_comparing_2007</bcf:citekey>
+    <bcf:citekey order="19">karlin1994comparisons</bcf:citekey>
+    <bcf:citekey order="20">cauchy1821cours</bcf:citekey>
+    <bcf:citekey order="21">schroder1877operationskreis</bcf:citekey>
+    <bcf:citekey order="22">didier2006decoding</bcf:citekey>
+    <bcf:citekey order="23">anderberg1973cluster</bcf:citekey>
+    <bcf:citekey order="24">efron1979bootstrap</bcf:citekey>
+    <bcf:citekey order="25">felsenstein1980confidence</bcf:citekey>
+    <bcf:citekey order="26">duda1973pattern</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="ynt">
