@@ -21,9 +21,6 @@
 #include <bits/stdc++.h>
 #include <algorithm>
 
-
-
-#define MAX_SEQUENCES 100
 using namespace std;
 
 //Defining some types that will be used later on
@@ -33,9 +30,7 @@ typedef vector<tuple<char,int>> tuple_list;
 typedef vector<vector<tuple<char, int>>> tuple_matrix;
 //Dissimilarity matrix
 typedef vector<vector<float>> diss_matrix;
-//Bootstrap replicate of the original dataset. We add to each replicate the index of the original sequence in order to be able to 
-//use the original dissimilarity matrix
-typedef tuple<int, tuple_list> replicate;
+
 
 //Global variables
 vector<string> sequences;
@@ -57,10 +52,10 @@ void readFile(char* path){
     
     string line;
     while(getline(file, line)){
-        sequences.push_back("");
         if(line[0] != '>'){
+            if(!line.empty()) sequences.push_back("");
             while(!line.empty()){
-                sequences[n_sequences] += line;
+                sequences.at(n_sequences) += line;
                 getline(file, line);
             }
             n_sequences++;
@@ -68,6 +63,7 @@ void readFile(char* path){
             sequence_names.push_back(line);
         }
     }
+    file.close();
 }
 
 //Cluster structure for hierarchichal clustering algorithm
@@ -211,59 +207,6 @@ Cluster *hierarchical_clustering(const vector<vector<float>> &dissimilarity_matr
         }
 
         //We merge both clusters the position of min_i, and erase the other cluster.
-        Cluster *merged_cluster = merge_clusters(clusters[min_i], clusters[min_j], min_dist);
-        clusters[min_i] = merged_cluster;
-        clusters.erase(clusters.begin() + min_j);
-    }
- 
-    return clusters[0];
-}
-
-
-//Hierarchical clustering over bootstrap replicates. This works just like in the previous case. The only difference is, that since
-//the replicates are in a different and random order, the dissimilarity matrix couldn't be used just as in the previous case. We then
-//added to the replicate type a reference to the original index in the sequence. At the beggining of the algorithm, the cluster id
-//will be assigned to that value
-Cluster *hierarchical_clustering_over_replicates(const vector<vector<float>> &dissimilarity_matrix, vector<replicate> replicates) {
-    size_t n = dissimilarity_matrix.size();
-    vector<Cluster*> clusters(n);
-    for (size_t i = 0; i < n; ++i) {
-        clusters[i] = new Cluster;
-        //This is the only line that differs from the original algorithm
-        clusters[i]->id = get<0>(replicates.at(i));
-        clusters[i]->members.push_back(i);
-        clusters[i]->dist = 0;
-        clusters[i]->left = nullptr;
-        clusters[i]->right = nullptr;
-    }
- 
-    while (clusters.size() > 1) {
-        cout << "Looping" << endl;
-        float min_dist = numeric_limits<float>::max();
-        size_t min_i = 0, min_j = 0;
-
-        for (size_t i = 0; i < clusters.size(); ++i) {
-            for (size_t j = i + 1; j < clusters.size(); ++j) {
-                float dist;
-                if (clusters.at(i)->members.size() == 1 && clusters.at(j)->members.size() == 1){
-                    int idx_i = clusters.at(i)->members.at(0);
-                    int idx_j = clusters.at(j)->members.at(0);
-                    dist = dissimilarity_matrix.at(idx_i).at(idx_j);
-                }else{
-                    tuple_list new_chain_i = majority_chain(*clusters.at(i));
-                    tuple_list new_chain_j = majority_chain(*clusters.at(j));
-                    dist = distance(new_chain_i, new_chain_j);
-                }
-
-                if (dist < min_dist) {
-                    min_dist = dist;
-                    min_i = i;
-                    min_j = j;
-                }
-                
-            }
-        }
-
         Cluster *merged_cluster = merge_clusters(clusters[min_i], clusters[min_j], min_dist);
         clusters[min_i] = merged_cluster;
         clusters.erase(clusters.begin() + min_j);
@@ -486,6 +429,7 @@ tuple_matrix read_rewritten_sequences(string path){
         n_sequences++;
     }
 
+    file.close();
     return res;
 }
 
@@ -510,37 +454,8 @@ diss_matrix read_diss_matrix(string path){
         }
         i++;
     }
-
+    file.close();
     return matrix;
-}
-
-// Resample function to generate bootstrap replicates from a set of rewritten sequences. Not used any more at this point
-vector<replicate> generateBootstrapReplicates(const tuple_matrix& originalSet) {
-    vector<replicate> replicates;
-    
-    static std::random_device rd; // obtain a random number from hardware
-    static std::mt19937 gen(rd()); // seed the generator
-    std::uniform_int_distribution<> distr(0, originalSet.size() - 1); // define the range
-
-    //We generate a bootstrap replicates set with the same size as the original one. Following the paper, each original sequence must
-    //be replaced by a sequence of the same length
-    for (int i = 0; i < originalSet.size(); i++) {
-        replicate rep;
-        int len = 0;
-        int index;
-
-        while(len != originalSet.at(i).size()){
-            index = distr(gen);
-            len = originalSet.at(index).size();
-        }
-
-        len = 0;
-        get<0>(rep) = index;
-        get<1>(rep) = originalSet.at(index);
-        replicates.push_back(rep);
-    }
-
-    return replicates;
 }
 
 
@@ -608,7 +523,7 @@ void writeTreesToNewickFile(vector<Cluster*>& trees,const std::string& filename)
 
 int main(){
     //Reading the sequences from the original dataset, storing the names in sequence_names
-    readFile("hiv-db.fasta");
+    readFile("nef.fsa");
     /*
     for(int i = 0; i < sequences.size(); i++){
         cout << sequences.at(i) << endl;
@@ -621,11 +536,14 @@ int main(){
     //code you can uncomment the lines and run this
     
     /*
-    tuple_matrix rewritten_sequences = rewriteSequenceList(sequences);
+    rewritten_sequences = rewriteSequenceList(sequences);
     ofstream file;
-    file.open("rewritten_40_sequences.txt");
+    file.open("rewritten_66_sequences_test.txt");
     for(int i = 0; i < rewritten_sequences.size(); i++){
         int j;
+        if (rewritten_sequences.at(i).empty()){
+            break;
+        }
         for (j = 0; j < rewritten_sequences.at(i).size(); j++)
         {
             if(j % 20 == 0 && j != 0){
@@ -648,33 +566,13 @@ int main(){
     }
     file.close();
     */
-
-    //We read the rewritten sequences
-    rewritten_sequences = read_rewritten_sequences("rewritten_40_sequences.txt");
-    //This part of the code will generate a certain number of bootstrap replicates. The process of hierarchical clustering takes 
-    //over 300 seconds for each set of 66 sequences, so a big number of replicates is not recommended unless you have a lot of 
-    //time and/or computational power. Once again, several results have already been computed, so it's not necessary to run everything
-    //again. Setting N_replicates = 0, this could all be run but just using the original dataset, which can be done in feasible time.
-    /*vector<tuple_matrix> bootstrap_replicates;
-    int N_replicates = 0;
-    for(int i = 0; i < N_replicates; i++){
-        bootstrap_replicates.push_back(generateReplicates(rewritten_sequences));
-    }
-    */
-
-    //Computing dissimilarity matrices for the bootstrap samples
-    /*vector<diss_matrix> bootstrap_diss;
-    for(int i = 0; i < N_replicates; i++){
-        diss_matrix m = ComputeDissimilarityMatrix(bootstrap_replicates.at(i));
-        bootstrap_diss.push_back(m);
-    }
-    */
-
+    
     //This code will compute the dissimilarity matrix over a set of rewritten sequences (always use the original set of sequences,
     //not the bootstrap replicates) and save them to a txt file.
     
+    /*
     ofstream file1;
-    file1.open("dissmatrix_40_sequences.txt");
+    file1.open("dissmatrix_66_sequences_test.txt");
     diss_matrix matrix =  ComputeDissimilarityMatrix(rewritten_sequences);
     for(int i = 0; i < matrix.size(); i++){
         for(int j = 0; j < matrix.size(); j++){
@@ -683,10 +581,35 @@ int main(){
         file1 << endl;
     }
     file1.close();
+    */
+
+    //We read the rewritten sequences
+    rewritten_sequences = read_rewritten_sequences("./TXT files/rewritten_66_sequences.txt");
+    
+    //This part of the code will generate a certain number of bootstrap replicates. The process of hierarchical clustering takes 
+    //over 300 seconds for each set of 66 sequences, so a big number of replicates is not recommended unless you have a lot of 
+    //time and/or computational power. Once again, several results have already been computed, so it's not necessary to run everything
+    //again. Setting N_replicates = 0, this could all be run but just using the original dataset, which can be done in feasible time.
+    /*
+    vector<tuple_matrix> bootstrap_replicates;
+    int N_replicates = 0;
+    for(int i = 0; i < N_replicates; i++){
+        bootstrap_replicates.push_back(generateReplicates(rewritten_sequences));
+    }
+    */
     
 
+    //Computing dissimilarity matrices for the bootstrap samples
+    /*
+    vector<diss_matrix> bootstrap_diss;
+    for(int i = 0; i < N_replicates; i++){
+        diss_matrix m = ComputeDissimilarityMatrix(bootstrap_replicates.at(i));
+        bootstrap_diss.push_back(m);
+    }
+    */
+
     //Reading the already computed dissimilarity matrix
-    //diss_matrix matrix = read_diss_matrix("dissmatrix__40_sequences.txt");
+    diss_matrix matrix = read_diss_matrix("./TXT files/dissmatrix_66_sequences.txt");
 
     //Performing hierarchical clustering, over the original set of sequences as well as over the bootstrap replicates.
     //All the results are stored in the vector trees.
@@ -694,8 +617,10 @@ int main(){
     
     Cluster *root = hierarchical_clustering(matrix);
     vector<Cluster*> trees;
+    cout << "Finished clustering" << endl;
     trees.push_back(root);
 
+    //If computing bootstrap trees, uncomment this part to add the trees 
     /*
     for(int i = 0; i < N_replicates; i++){
         Cluster * clust = hierarchical_clustering(bootstrap_diss.at(i));
@@ -704,7 +629,7 @@ int main(){
     */
     
     //Final part of the code, once we have the trees we want to run Consensus on, we save them to a txt file in the Newick format
-    writeTreesToNewickFile(trees, "newick_trees_40_sequences.txt");
+    writeTreesToNewickFile(trees, "newick_trees_66_sequences_bootstrap.txt");
     
 
     return 0;
