@@ -161,6 +161,36 @@
       \field{volume}{3}
       \field{year}{1973}
     \endentry
+    \entry{sokal1975statistical}{article}{}
+      \name{author}{2}{}{%
+        {{hash=d97fe0cfa1798ad6a2f0196ff95cf74e}{%
+           family={Sokal},
+           familyi={S\bibinitperiod},
+           given={Robert\bibnamedelima R},
+           giveni={R\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=de5a20ed13980411e09b1694e88a8241}{%
+           family={Michener},
+           familyi={M\bibinitperiod},
+           given={Charles\bibnamedelima D},
+           giveni={C\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \strng{namehash}{b8854d12ccadc157df637071e6d65025}
+      \strng{fullhash}{b8854d12ccadc157df637071e6d65025}
+      \strng{bibnamehash}{b8854d12ccadc157df637071e6d65025}
+      \strng{authorbibnamehash}{b8854d12ccadc157df637071e6d65025}
+      \strng{authornamehash}{b8854d12ccadc157df637071e6d65025}
+      \strng{authorfullhash}{b8854d12ccadc157df637071e6d65025}
+      \field{labelalpha}{SM75}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Multivariate statistical methods, among-groups covariation}
+      \field{title}{A statistical method for evaluating systematic relationships}
+      \field{year}{1975}
+      \field{pages}{269}
+      \range{pages}{1}
+    \endentry
     \entry{efron1979bootstrap}{article}{}
       \name{author}{1}{}{%
         {{hash=32a20599d34d0c1c6a39fab839c5ae95}{%
@@ -383,6 +413,75 @@
       \endverb
       \verb{url}
       \verb https://doi.org/10.1186/1471-2105-8-1
+      \endverb
+    \endentry
+    \entry{Liu2021seqdistk}{article}{}
+      \name{author}{7}{}{%
+        {{hash=4d024f8afe0bbad82f7334b673b7296c}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Xuemei},
+           giveni={X\bibinitperiod}}}%
+        {{hash=4d5a1ec375736c19dc1665edb1bb6fee}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Wen},
+           giveni={W\bibinitperiod}}}%
+        {{hash=0eea3eb34ce1c78b5cd3bd4337d36a28}{%
+           family={Huang},
+           familyi={H\bibinitperiod},
+           given={Guanda},
+           giveni={G\bibinitperiod}}}%
+        {{hash=cfe7c569bc57ca7b89e85c8755875d05}{%
+           family={Huang},
+           familyi={H\bibinitperiod},
+           given={Tianlai},
+           giveni={T\bibinitperiod}}}%
+        {{hash=4d8659d6371bb647298a06dcefa8ce44}{%
+           family={Xiong},
+           familyi={X\bibinitperiod},
+           given={Qingang},
+           giveni={Q\bibinitperiod}}}%
+        {{hash=99df4ae2195c89a9a8b6c534a904dbce}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Wen},
+           giveni={W\bibinitperiod}}}%
+        {{hash=9ad79c9f87f1d9871d699989c6b2f476}{%
+           family={Xia},
+           familyi={X\bibinitperiod},
+           given={Li\bibnamedelima C.},
+           giveni={L\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Cold Spring Harbor Laboratory}%
+      }
+      \strng{namehash}{00082f80a173468f0f0c66f215409e5f}
+      \strng{fullhash}{514ebff79635539b09b22c39210997f1}
+      \strng{bibnamehash}{00082f80a173468f0f0c66f215409e5f}
+      \strng{authorbibnamehash}{00082f80a173468f0f0c66f215409e5f}
+      \strng{authornamehash}{00082f80a173468f0f0c66f215409e5f}
+      \strng{authorfullhash}{514ebff79635539b09b22c39210997f1}
+      \field{labelalpha}{Liu+21}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Algorithms for constructing phylogenetic trees are fundamental to study the evolution of viruses, bacteria, and other microbes. Established multiple alignment-based algorithms are inefficient for large scale metagenomic sequence data because of their high requirement of inter-sequence correlation and high computational complexity. In this paper, we present SeqDistK, a novel tool for alignment-free phylogenetic analysis. SeqDistK computes the dissimilarity matrix for phylogenetic analysis, incorporating seven k-mer based dissimilarity measures, namely d2, d2S, d2star, Euclidean, Manhattan, CVTree, and Chebyshev. Based on these dissimilarities, SeqDistK constructs phylogenetic tree using the Unweighted Pair Group Method with Arithmetic Mean algorithm. Using a golden standard dataset of 16S rRNA and its associated phylogenetic tree, we compared SeqDistK to Muscle {–} a multi sequence aligner. We found SeqDistK was not only 38 times faster than Muscle in computational efficiency but also more accurate. SeqDistK achieved the smallest symmetric difference between the inferred and ground truth trees with a range between 13 to 18, while that of Muscle was 62. When measures d2, d2star, d2S, Euclidean, and k-mer size k=5 were used, SeqDistK consistently inferred phylogenetic tree almost identical to the ground truth tree. We also performed clustering of 16S rRNA sequences using SeqDistK and found the clustering was highly consistent with known biological taxonomy. Among all the measures, d2S (k=5, M=2) showed the best accuracy as it correctly clustered and classified all sample sequences. In summary, SeqDistK is a novel, fast and accurate alignment-free tool for large-scale phylogenetic analysis. SeqDistK software is freely available at https://github.com/htczero/SeqDistK.Competing Interest StatementThe authors have declared no competing interest.}
+      \field{journaltitle}{bioRxiv}
+      \field{title}{SeqDistK: a Novel Tool for Alignment-free Phylogenetic Analysis}
+      \field{year}{2021}
+      \verb{doi}
+      \verb 10.1101/2021.08.16.456500
+      \endverb
+      \verb{eprint}
+      \verb https://www.biorxiv.org/content/early/2021/08/17/2021.08.16.456500.full.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://www.biorxiv.org/content/early/2021/08/17/2021.08.16.456500
+      \endverb
+      \verb{url}
+      \verb https://www.biorxiv.org/content/early/2021/08/17/2021.08.16.456500
       \endverb
     \endentry
   \enddatalist

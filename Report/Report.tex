@@ -183,22 +183,9 @@
 
 \newpage
 
-\addcontentsline{toc}{section}{Notation}
-\section*{Notations}\label{sec:notation}
-
-\begin{table}[h!]
-    \centering
-    \begin{tabular}{p{5cm} p{13cm}}
-        \hline
-        Notation & Meaning\\
-        \hline
-        $\llbracket \cdot, \, \cdot \rrbracket \: : \: \I N \times \I N \to \I N$ & Integer interval, $\llbracket a, \, b \rrbracket = \{a, \, a+1, \, \ldots, \, b\}$
-    \end{tabular}
-\end{table}
-
 \section{Introduction and summary of the article}\label{seq:summary}
 
-This article describes the problem in sequence comparison, which arises when attempting to compare a large number of sequences together. Classic sequence alignment methods often struggle to effectively handle certain types of sequence alterations, such as insertions or deletions. Intuitive approaches to address this problem without alignment involve examining the frequency of nucleotides or amino acids. However, this method lacks meaningfulness, as sequences with similar frequencies can still exhibit significant differences. A more sophisticated and effective approach is dealing with what~\cite{didier_comparing_2007} calls $N$-words (in nowaday's litterature, we call them $k$-mers). With those, we can compute dissimilarities between sequences~\cite{karlin1994comparisons} which can help us show evolutionary relationships between sequences.\\
+This article describes the problem in sequence comparison, which arises when attempting to compare a large number of sequences together. Classic sequence alignment methods often struggle to effectively handle certain types of sequence alterations, such as insertions or deletions. Intuitive approaches to address this problem without alignment involve examining the frequency of nucleotides or amino acids. However, this method lacks meaningfulness, as sequences with similar frequencies can still exhibit significant differences. A more sophisticated and effective approach is dealing with what~\cite{didier_comparing_2007} calls $N$-words. With those, we can compute dissimilarities between sequences~\cite{karlin1994comparisons} which can help us show evolutionary relationships between sequences.\\
 
 \subsection{Local decoding method of order $N$}
 
@@ -279,9 +266,10 @@ These related sites can be categorized into distinct equivalence classes, as the
 \begin{definition}[$N$-classes]
     An $N$-class can be defined as follows,with $a$ being the identifier of the $N$-class:
     \[
-        C(a) = \{x \in \llbracket 1, \, |S| \rrbracket; \; x \text{ is related with } a\}
+        C(a) = \{x \in \llbracket 1, \, |S| \rrbracket\footnotemark; \; x \text{ is related with } a\}
     \]
 \end{definition}
+\footnotetext{$\llbracket \cdot, \, \cdot \rrbracket \: : \: \I N \times \I N \to \I N$: Integer interval, $\llbracket a, \, b \rrbracket = \{a, \, a+1, \, \ldots, \, b\}$}
 
 Consequently, by assigning a unique identifier to each $N$-class, we can rename every site in the entire sequence by appending the nucleotide (or amino acid) with the identifier of the class to which it belongs. However, there may exist sites that are not related to any other site in any other sequence, resulting in singleton $N$-classes. To avoid excessive and unnecessary identifiers, which could lead to unreadable representations, we represent these sites solely by their nucleotide or amino acid.
 
@@ -359,9 +347,7 @@ Then to compute the similarity between each sequences, we apply the following fo
     \]
 \end{example}
 
-The dissimilarity (or distance) can easily be obtained by taking the complement to 1 of the similarity.
-
-\subsection{Clustering and trees}
+The dissimilarity (or distance) can easily be obtained by taking the complement to 1 of the similarity.\\
 
 Now that we have our mesure of distance between sequences, we can perform an agglomerative hierarchical clustering~\cite{anderberg1973cluster} that can give us an idea of a potential mutative evolution of HIV and SIV, that can be interpreted as subtypes of these viruses. However, in order to perform this clustering, we need a method to compute the distance between clusters containing multiple sequences. The article does not present one, so we had to design our own, described in Subsection~\ref{ssec:merge} 
 
@@ -376,7 +362,7 @@ For each sequence in the original data, a random replicate of the same size is c
 
 \subsection{Data Sets}\label{ssec:DS}
 
-We used two different sequence sets to run our experiments: one given from Gilles Didier, co-author of~\cite{didier_comparing_2007}, and another that we retrieved ourselves, both coming from the data base maintened by the `Los Alamos National Laboratory'\footnote{\url{https://www.hiv.lanl.gov}}. The first set contains 66 sequences writen prior to 2007~\footnote{The sequences presented in figure 1 of~\cite{didier_comparing_2007}, with 4 missing sequences}, and the second one has been created from the query to have 47 sequences sampled in 2016 in Germany (so that we look at mutations in a restrained place and time).
+We used two different sequence sets to run our experiments: one given from Gilles Didier, co-author of~\cite{didier_comparing_2007}, and another that we retrieved ourselves, both coming from the data base maintened by the `Los Alamos National Laboratory'\footnote{\url{https://www.hiv.lanl.gov}}. The first set contains 66 sequences writen prior to 2007~\footnote{The sequences presented in figure 1 of~\cite{didier_comparing_2007}, with 4 missing sequences}, and the second one has been created from the query to have 50 sequences sampled in 2016 in Germany (so that we look at mutations in a restrained place and time).
 
 \subsection{Cluster merging method}\label{ssec:merge}
 
@@ -394,7 +380,7 @@ In simpler terms, for each site of the artificial sequence, we select the $N$-cl
 
 \subsubsection{Comparison of the clustering trees}
 
-We have followed the procedure outlined in the summary (Section~\ref{seq:summary}). The resulting dissimilarity matrix for the set of sequences can be found in the file named \texttt{dissmatrix\_\_66\_sequences.txt} within the repository. Since the matrix is too large to be displayed here, please refer to the file for its contents. Additionally, the corresponding cluster tree for this dissimilarity matrix is presented in Figure~\ref{fig:tree66} in the Appendix. It follows the cluster tree from the original article, which can be found in Figure~\ref{fig:original_tree66}.\\
+We have followed the procedure outlined in the summary (Section~\ref{seq:summary}) and used the same length of $N$-words as in the article, i.e. $N=15$. The resulting dissimilarity matrix for the set of sequences can be found in the file named \texttt{dissmatrix\_\_66\_sequences.txt} within the repository. Since the matrix is too large to be displayed here, please refer to the file for its contents. Additionally, the corresponding cluster tree for this dissimilarity matrix is presented in Figure~\ref{fig:tree66} in the Appendix. It follows the cluster tree from the original article, which can be found in Figure~\ref{fig:original_tree66}.\\
 
 When looking at both the figures, we can see that they are very alike. Let's take the following sequences in example:
 
@@ -426,12 +412,26 @@ While the bootstrap trees are not identical to each other or to the original gen
 
 \subsection{`German' set of sequences}
 
+In Figure~\ref{fig:tree50}, we can remark that the various subtypes of HIV are well-clustered within the clustering tree. Notably, the four sequences belonging to subtype 01AE are grouped together, as are the sequences of subtype B. However, the sequences of subtype C display a slight scattering pattern in the tree. A majority of the subtype C sequences are clustered near the top of the tree, with one sequence positioned slightly higher, and the remaining sequences forming another subtree within the tree.\\
+
+Based on the observations made for the previous set of sequences, it is worth noting that the bootstraps for the current set - located at \texttt{Trees/Bootstraps\_50\_sequences} in the repository - exhibit a consistent structure. Furthermore, only minimal permutations among the leaf nodes are observed across the different bootstraps. Considering the previous paragraph, it can be concluded that our algorithm demonstrates a high level of reliability for this particular dataset as well.
 
 \section{Conclusion}
 
+In this review, we have observed an innovative method (considering the relatively early publishing year of the article) for alignment-free sequence comparison. This method enables the identification of evolutionary relationships between sequences and highlights divisions into subtypes.\\
+
+Although the cluster merging method was not described in the article, we were able to re-implement the remaining parts of the described algorithm. This allowed us to demonstrate that the experiments were not environment-dependent, and we obtained consistent results. Additionally, we confirmed the effectiveness and reliability of our cluster merging method.\\
+
+As mentioned earlier, this article was published in 2007, and since then, other methods may have been developed with better efficiency, runtime, and correctness. This is likely the case with the SeqDistK method~\cite{Liu2021seqdistk}. This method uses the same algorithmic pattern as the article under review but employs seven different $k$-mer (or $N$-word) distances. It also utilizes the Unweighted Pair Group Method with Arithmetic Mean algorithm~\cite{sokal1975statistical} to construct the tree.
+
+
+\vfill
+
+\addcontentsline{toc}{section}{References}
+\printbibliography
 
 \newpage
-
+\addcontentsline{toc}{section}{Appendix}
 \section*{Appendix}
 
 \begin{figure}[H]
@@ -448,11 +448,12 @@ While the bootstrap trees are not identical to each other or to the original gen
     \label{fig:tree66}
 \end{figure}
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.95\textheight, angle=90]{../Trees/50_tree.png}
+    \caption{Tree obtained from the dissimilarity matrix of the 50 sequences from Germany, with $N = 15$}
+    \label{fig:tree50}
+\end{figure}
 
-
-
-\newpage
-\addcontentsline{toc}{section}{References}
-\printbibliography
 
 \end{document}

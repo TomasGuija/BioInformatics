@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.11.19)  28 MAY 2023 00:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.11.19)  30 MAY 2023 01:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1211,7 +1211,7 @@ Package biblatex Info: Reference segment=0 on input line 175.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<./Images//Fond1.png, id=67, 388.45125pt x 1087.06125pt>
+<./Images//Fond1.png, id=66, 388.45125pt x 1087.06125pt>
 File: ./Images//Fond1.png Graphic file (type png)
 <use ./Images//Fond1.png>
 Package pdftex.def Info: ./Images//Fond1.png  used on input line 7.
@@ -1220,12 +1220,12 @@ LaTeX Font Info:    Trying to load font information for T1+fvs on input line 10.
  (/usr/share/texlive/texmf-dist/tex/latex/bera/t1fvs.fd
 File: t1fvs.fd 2004/09/07 scalable font definitions for T1/fvs.
 )
-<./Images//logo-ULB.jpg, id=68, 128.3997pt x 38.7849pt>
+<./Images//logo-ULB.jpg, id=67, 128.3997pt x 38.7849pt>
 File: ./Images//logo-ULB.jpg Graphic file (type jpg)
 <use ./Images//logo-ULB.jpg>
 Package pdftex.def Info: ./Images//logo-ULB.jpg  used on input line 23.
 (pdftex.def)             Requested size: 199.16928pt x 60.16565pt.
-<Images/VUB_RGB.png, id=69, 2059.695pt x 738.76pt>
+<Images/VUB_RGB.png, id=68, 2059.695pt x 738.76pt>
 File: Images/VUB_RGB.png Graphic file (type png)
 <use Images/VUB_RGB.png>
 Package pdftex.def Info: Images/VUB_RGB.png  used on input line 27.
@@ -1238,24 +1238,23 @@ File: t1cmss.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 LaTeX Font Warning: Font shape `T1/cmss/m/n' in size <22> not available
 (Font)              size <20.74> substituted on input line 38.
 
-[1
-
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./Images//Fond1.png (PNG copy)> <./Images//logo-ULB.jpg> <./Images/VUB_RGB.png>]) (./Report.toc
-LaTeX Font Info:    Trying to load font information for U+msa on input line 2.
- (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+LaTeX Font Info:    Trying to load font information for U+msa on input line 71.
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 2.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 71.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 2.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 71.
  (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-LaTeX Font Info:    Trying to load font information for U+stmry on input line 2.
- (/usr/share/texlive/texmf-dist/tex/latex/stmaryrd/Ustmry.fd))
+LaTeX Font Info:    Trying to load font information for U+stmry on input line 71.
+ (/usr/share/texlive/texmf-dist/tex/latex/stmaryrd/Ustmry.fd) [1
+
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./Images//Fond1.png (PNG copy)> <./Images//logo-ULB.jpg> <./Images/VUB_RGB.png>]) (./Report.toc)
 \tf@toc=\write7
 \openout7 = `Report.toc'.
 
@@ -1264,25 +1263,31 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has b
                    \relax 
 l.184 \newpage
                [1]
-Overfull \hbox (52.45273pt too wide) in paragraph at lines 191--197
- [][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 201--202
+Underfull \hbox (badness 10000) in paragraph at lines 188--189
 
  []
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 203.
+(hyperref)                removing `math shift' on input line 190.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 203.
+(hyperref)                removing `math shift' on input line 190.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 205--206
+Underfull \hbox (badness 10000) in paragraph at lines 192--193
+
+ []
+
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 194.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 199.
+
+Underfull \hbox (badness 10000) in paragraph at lines 204--205
 
  []
 
@@ -1293,114 +1298,553 @@ Package mdframed Info: mdframed detected package amsthm
  changed the theorem header of amsthm
 (mdframed)              on input line 212.
 
-Underfull \hbox (badness 10000) in paragraph at lines 217--218
+Underfull \hbox (badness 10000) in paragraph at lines 212--213
 
  []
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 220.
+(mdframed)              on input line 245.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 225.
-
-Underfull \hbox (badness 10000) in paragraph at lines 225--226
-
- []
-
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 258.
-Package mdframed Info: Box was splittet wrong
- starting loop to iterate the splitting point
-(mdframed)              on input line 271.
+(mdframed)              on input line 261.
 [2]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 274.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 279.
+(mdframed)              on input line 266.
 
-Underfull \hbox (badness 10000) in paragraph at lines 291--292
+Underfull \hbox (badness 10000) in paragraph at lines 279--280
 
  []
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 296.
+(mdframed)              on input line 284.
 
-Underfull \hbox (badness 10000) in paragraph at lines 296--297
+Underfull \hbox (badness 10000) in paragraph at lines 284--285
 
  []
 
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 333.
+
+Overfull \vbox (1.62523pt too high) detected at line 348
+ []
+
+Package mdframed Info: Box was splittet wrong
+ starting loop to iterate the splitting point
+(mdframed)              on input line 348.
+
+Overfull \vbox (2.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (3.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (4.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (5.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (6.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (7.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (8.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (9.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (10.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (11.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (12.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (13.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (14.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (15.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (16.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (17.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (18.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (19.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (20.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (21.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (22.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (23.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (24.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (25.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (26.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (27.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (28.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (29.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (30.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (31.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (32.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (33.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (34.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (35.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (36.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (37.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (38.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (39.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (40.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (41.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (42.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (43.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (44.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (45.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (46.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (47.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (48.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (49.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (50.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (51.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (52.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (53.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (54.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (55.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (56.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (57.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (58.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (59.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (60.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (61.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (62.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (63.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (64.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (65.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (66.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (67.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (68.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (69.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (70.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (71.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (72.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (73.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (74.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (75.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (76.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (77.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (78.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (79.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (80.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (81.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (82.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (83.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (84.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (85.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (86.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (87.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (88.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (89.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (90.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (91.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (92.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (93.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (94.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (95.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (96.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (97.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (98.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (99.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (100.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (101.62523pt too high) detected at line 348
+ []
+
+
+Overfull \vbox (102.62523pt too high) detected at line 348
+ []
+
+
+Package mdframed Warning: correct box splittet fails
+ It seems you are using a non splittable contents
+(mdframed)                 on input line 348.
+
+Package mdframed Info: You first box width is to small
+ mdframed fixed it
+(mdframed)              on input line 348.
 [3]
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 345.
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 377.
- (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
+Underfull \hbox (badness 10000) in paragraph at lines 350--351
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 357--358
+
+ []
+
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 365.
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-Underfull \hbox (badness 10000) in paragraph at lines 395--396
+Underfull \hbox (badness 10000) in paragraph at lines 383--384
 
  []
 
 [4]
-<Images/Example_66.png, id=181, 596.2275pt x 126.4725pt>
+<Images/Example_66.png, id=185, 596.2275pt x 126.4725pt>
 File: Images/Example_66.png Graphic file (type png)
 <use Images/Example_66.png>
-Package pdftex.def Info: Images/Example_66.png  used on input line 403.
+Package pdftex.def Info: Images/Example_66.png  used on input line 391.
 (pdftex.def)             Requested size: 232.17242pt x 49.24881pt.
-<Images/Example_Orig66.png, id=182, 681.54625pt x 192.72pt>
+<Images/Example_Orig66.png, id=186, 681.54625pt x 192.72pt>
 File: Images/Example_Orig66.png Graphic file (type png)
 <use Images/Example_Orig66.png>
-Package pdftex.def Info: Images/Example_Orig66.png  used on input line 409.
+Package pdftex.def Info: Images/Example_Orig66.png  used on input line 397.
 (pdftex.def)             Requested size: 232.17242pt x 65.65038pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 414--415
+Underfull \hbox (badness 10000) in paragraph at lines 402--403
 
  []
 
-[5 <./Images/Example_66.png> <./Images/Example_Orig66.png>]
-<../Trees/original_66_tree.png, id=191, 1204.5pt x 1706.375pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 408--409
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 415--416
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 421--422
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 423--424
+
+ []
+
+[5 <./Images/Example_66.png> <./Images/Example_Orig66.png>] [6]
+<../Trees/original_66_tree.png, id=225, 1204.5pt x 1706.375pt>
 File: ../Trees/original_66_tree.png Graphic file (type png)
 <use ../Trees/original_66_tree.png>
-Package pdftex.def Info: ../Trees/original_66_tree.png  used on input line 433.
+Package pdftex.def Info: ../Trees/original_66_tree.png  used on input line 439.
 (pdftex.def)             Requested size: 483.69687pt x 685.24579pt.
-
+ [7]
 Overfull \vbox (21.70961pt too high) has occurred while \output is active []
 
- [6 <../Trees/original_66_tree.png (PNG copy)>]
-<../Trees/66_tree.png, id=198, 1595.9625pt x 872.25874pt>
+ [8 <../Trees/original_66_tree.png (PNG copy)>]
+<../Trees/66_tree.png, id=235, 1595.9625pt x 872.25874pt>
 File: ../Trees/66_tree.png Graphic file (type png)
 <use ../Trees/66_tree.png>
-Package pdftex.def Info: ../Trees/66_tree.png  used on input line 440.
+Package pdftex.def Info: ../Trees/66_tree.png  used on input line 446.
 (pdftex.def)             Requested size: 694.67181pt x 379.66905pt.
- [7 <../Trees/66_tree.png>] [8] (./Report.aux)
+<../Trees/50_tree.png, id=236, 1595.9625pt x 872.25874pt>
+File: ../Trees/50_tree.png Graphic file (type png)
+<use ../Trees/50_tree.png>
+Package pdftex.def Info: ../Trees/50_tree.png  used on input line 453.
+(pdftex.def)             Requested size: 694.67181pt x 379.66905pt.
+ [9 <../Trees/66_tree.png>] [10 <../Trees/50_tree.png>] (./Report.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.26pt have occurred.
 
 Package rerunfilecheck Info: File `Report.out' has not changed.
-(rerunfilecheck)             Checksum: 07ADA6399EF2B19400E8FF5E2AFE70E2;2467.
+(rerunfilecheck)             Checksum: E74BC7183DFF36C7DE67B7CCAF3A4569;2489.
 Package logreq Info: Writing requests to 'Report.run.xml'.
 \openout1 = `Report.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 35088 strings out of 478287
- 666257 string characters out of 5849288
- 1470689 words of memory out of 5000000
- 52639 multiletter control sequences out of 15000+600000
- 499911 words of font info for 92 fonts, out of 8000000 for 9000
+ 35112 strings out of 478287
+ 666812 string characters out of 5849288
+ 1470864 words of memory out of 5000000
+ 52654 multiletter control sequences out of 15000+600000
+ 501825 words of font info for 100 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 120i,12n,126p,1335b,1895s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx2488.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0600.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0700.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0900.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfso1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfss0900.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfss1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfss2074.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsx0900.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsx1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1000.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/stmaryrd/stmary10.pfb>
-Output written on Report.pdf (9 pages, 1217615 bytes).
+ 120i,10n,126p,2092b,1867s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx2488.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0600.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0700.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0900.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfso1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfss0900.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfss1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfss2074.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsx0900.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsx1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1000.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/stmaryrd/stmary10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/stmaryrd/stmary8.pfb>
+Output written on Report.pdf (11 pages, 1271489 bytes).
 PDF statistics:
- 365 PDF objects out of 1000 (max. 8388607)
- 279 compressed objects within 3 object streams
- 48 named destinations out of 1000 (max. 500000)
- 168 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 411 PDF objects out of 1000 (max. 8388607)
+ 310 compressed objects within 4 object streams
+ 51 named destinations out of 1000 (max. 500000)
+ 173 words of extra memory for PDF output out of 10000 (max. 10000000)
 

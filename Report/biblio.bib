@@ -115,3 +115,24 @@ author = {Michael R. Anderberg}
   url          = {https://evolution.genetics.washington.edu/phylip.html},
   year         = {2005}
 }
+
+@article {Liu2021seqdistk,
+	author = {Xuemei Liu and Wen Li and Guanda Huang and Tianlai Huang and Qingang Xiong and Wen Chen and Li C. Xia},
+	title = {SeqDistK: a Novel Tool for Alignment-free Phylogenetic Analysis},
+	elocation-id = {2021.08.16.456500},
+	year = {2021},
+	doi = {10.1101/2021.08.16.456500},
+	publisher = {Cold Spring Harbor Laboratory},
+	abstract = {Algorithms for constructing phylogenetic trees are fundamental to study the evolution of viruses, bacteria, and other microbes. Established multiple alignment-based algorithms are inefficient for large scale metagenomic sequence data because of their high requirement of inter-sequence correlation and high computational complexity. In this paper, we present SeqDistK, a novel tool for alignment-free phylogenetic analysis. SeqDistK computes the dissimilarity matrix for phylogenetic analysis, incorporating seven k-mer based dissimilarity measures, namely d2, d2S, d2star, Euclidean, Manhattan, CVTree, and Chebyshev. Based on these dissimilarities, SeqDistK constructs phylogenetic tree using the Unweighted Pair Group Method with Arithmetic Mean algorithm. Using a golden standard dataset of 16S rRNA and its associated phylogenetic tree, we compared SeqDistK to Muscle {\textendash} a multi sequence aligner. We found SeqDistK was not only 38 times faster than Muscle in computational efficiency but also more accurate. SeqDistK achieved the smallest symmetric difference between the inferred and ground truth trees with a range between 13 to 18, while that of Muscle was 62. When measures d2, d2star, d2S, Euclidean, and k-mer size k=5 were used, SeqDistK consistently inferred phylogenetic tree almost identical to the ground truth tree. We also performed clustering of 16S rRNA sequences using SeqDistK and found the clustering was highly consistent with known biological taxonomy. Among all the measures, d2S (k=5, M=2) showed the best accuracy as it correctly clustered and classified all sample sequences. In summary, SeqDistK is a novel, fast and accurate alignment-free tool for large-scale phylogenetic analysis. SeqDistK software is freely available at https://github.com/htczero/SeqDistK.Competing Interest StatementThe authors have declared no competing interest.},
+	URL = {https://www.biorxiv.org/content/early/2021/08/17/2021.08.16.456500},
+	eprint = {https://www.biorxiv.org/content/early/2021/08/17/2021.08.16.456500.full.pdf},
+	journal = {bioRxiv}
+}
+
+@article{sokal1975statistical,
+  title={A statistical method for evaluating systematic relationships},
+  author={Sokal, Robert R and Michener, Charles D},
+  journal={Multivariate statistical methods, among-groups covariation},
+  pages={269},
+  year={1975}
+}
