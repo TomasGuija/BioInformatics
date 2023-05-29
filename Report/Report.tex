@@ -198,14 +198,14 @@
 
 \section{Introduction and summary of the article}\label{seq:summary}
 
-This article describes the problem in sequence comparison of the fact that when we want to compare a large number of sequences together, some types of sequence alteration like insertion or deletion are poorly - if ever - handled by classic sequence alignment methods. Intuitive ideas to solve this problem without alignment would be to look at the nucleotids or amino acids frequency, but this methods is not really meaningful, as sequences with similar frequencies can be a lot different. A more sophisticated - and more working - is dealing with what~\cite{didier_comparing_2007} calls $N$-words (in nowaday's litterature, we call them $k$-mers). With those, we can compute dissimilarities between sequences~\cite{karlin1994comparisons} which can help us show evolutionary relationships between sequences.\\
+This article describes the problem in sequence comparison, which arises when attempting to compare a large number of sequences together. Classic sequence alignment methods often struggle to effectively handle certain types of sequence alterations, such as insertions or deletions. Intuitive approaches to address this problem without alignment involve examining the frequency of nucleotides or amino acids. However, this method lacks meaningfulness, as sequences with similar frequencies can still exhibit significant differences. A more sophisticated and effective approach is dealing with what~\cite{didier_comparing_2007} calls $N$-words (in nowaday's litterature, we call them $k$-mers). With those, we can compute dissimilarities between sequences~\cite{karlin1994comparisons} which can help us show evolutionary relationships between sequences.\\
 
 \subsection{Local decoding method of order $N$}
 
 The first step of this analysis presented by~\cite{didier_comparing_2007} is the local decoding method of order $N$, or $N$-local decoding. \\
 
 \begin{definition}[$N$-words]\label{def:nword}
-    In a sequence, a $N$-word is a \textbf{contiguous sub-sequence of size $N$} of the given sequence. The set of its $N$-words is the its sub-sequences of size $N$. 
+    In a sequence, an $N$-word is a \textbf{contiguous sub-sequence of size $N$} within the given sequence. The set of $N$-words for a sequence consists of all its sub-sequences of size $N$.
 \end{definition}
 
 \begin{example}
@@ -214,7 +214,7 @@ The first step of this analysis presented by~\cite{didier_comparing_2007} is the
 
 \vspace{3mm}
 
-Let $S = S_1 S_2 \ldots S_i \ldots S_{|S|}$ be a sequence, $i$ a site (or index) of $S$. For a given $N \in \I N^*$, we consider the set of $N$-words of $S$ covering the site $i$.\\
+Let $S = S_1 S_2 \ldots S_i \ldots S_{|S|}$ be a sequence, where $i$ denotes a site (or index) within $S$. For a given $N \in \I N^*$, we consider the set of $N$-words of $S$ covering the site $i$.\\
 
 
 \begin{definition}[Direct relation]\label{def:direct_rel}
@@ -252,7 +252,7 @@ Let $S = S_1 S_2 \ldots S_i \ldots S_{|S|}$ be a sequence, $i$ a site (or index)
     \end{minipage}
 
     \noindent
-    The 5-word TGGAC appears in both these sequences, and the site 11 in seq1 and 5 in seq2 are both in first position of the 5-word, so these two sites are \textbf{directly related}
+    The 5-word TGGAC appears in both these sequences, and the sites 11 in seq1 and 5 in seq2 are both in first position of the 5-word, so these two sites are \textbf{directly related}
 \end{example}
 
 \begin{definition}[Transitivity and transitive closure]
@@ -271,26 +271,26 @@ Let $S = S_1 S_2 \ldots S_i \ldots S_{|S|}$ be a sequence, $i$ a site (or index)
 \end{definition}
 
 \begin{definition}
-    We define the (simple) relation between two sites as the transitive closure of the direct relation. Therefore, we say that two sites are related of there is a (finite) chain of direct relations linking those sites
+    We define the (simple) relation between two sites as the transitive closure of the direct relation. Therefore, we say that two sites are related if there is a (finite) chain of direct relations linking those sites.
 \end{definition}
 
-We can divide those sites in a partition of relation classes\footnote{The proof comes from the fact that the relation we described is an equivalence relation, i.e. it is reflexive, symmetric, and transitive}.~\cite{didier_comparing_2007} calls them $N$-classes.
+These related sites can be categorized into distinct equivalence classes, as the relation we described satisfies the properties of an equivalence relation, namely, reflexivity, symmetry, and transitivity.~\cite{didier_comparing_2007} refers to these equivalence classes as $N$-classes.
 
 \begin{definition}[$N$-classes]
-    An $N$-class can be defined as follows (with $a$ being the identifier of the $N$-class):
+    An $N$-class can be defined as follows,with $a$ being the identifier of the $N$-class:
     \[
         C(a) = \{x \in \llbracket 1, \, |S| \rrbracket; \; x \text{ is related with } a\}
     \]
 \end{definition}
 
-Therefore, by giving an unique identifier to each $N$-class, we can rename each site of the whole sequence by the nucleotid (or amino acid) followed by the identifier of the class it is in. Only, there can be sites that are not not related to any other site in any other sequence, making singleton $N$-classes. As it could be rapidly unreadable to have large number of identifiers, and having some that appear in only one site, we denote these sites only by there nucleotide or amino acid.
+Consequently, by assigning a unique identifier to each $N$-class, we can rename every site in the entire sequence by appending the nucleotide (or amino acid) with the identifier of the class to which it belongs. However, there may exist sites that are not related to any other site in any other sequence, resulting in singleton $N$-classes. To avoid excessive and unnecessary identifiers, which could lead to unreadable representations, we represent these sites solely by their nucleotide or amino acid.
 
 
 \subsection{Dissimilarity matrix and clustering tree}\label{sseq:dissim}
 
-Now that we have our new sequences divided in disjoint $N$-classes of sites, we want to compare each sequence. For that, we need to choose a mesure of (dis)-similarity.~\cite{didier_comparing_2007} chose the one defined in~\cite{didier2006decoding}.\\
+Now that we have our new sequences divided into disjoint $N$-classes of sites, we aim to compare each sequence. To achieve that, we need to select a measure of (dis-)similarity.~\cite{didier_comparing_2007} chose the one defined in~\cite{didier2006decoding}.\\
 
-Let's defining the following notation. $|s|_x$ is the number of occurences of the identifier $x$ in the sequence $s$. For each pair of sequence and identifier $(s, \, x)$, we compute the value of $|s|_x$.
+Let's introduce the following notation. $|s|_x$ is the number of occurences of the identifier $x$ in the sequence $s$. For each pair of sequence and identifier $(s, \, x)$, we compute the value of $|s|_x$.
 
 \begin{example}
     We consider the following rewriten sequences:\\
@@ -363,12 +363,14 @@ The dissimilarity (or distance) can easily be obtained by taking the complement 
 
 \subsection{Clustering and trees}
 
-Now that we have our mesure of distance between sequences, we can perform an agglomerative hierarchical clustering~\cite{anderberg1973cluster} that can give us an idea of a potential mutative evolution of HIV and SIV, that can be interpreted as subtypes of these viruses. However, in order to perform this clustering, we need a method to compute the distance between clusters containing multiple sequences. The article does not present one, so we add to design our own described in Subsection~\ref{ssec:merge} 
+Now that we have our mesure of distance between sequences, we can perform an agglomerative hierarchical clustering~\cite{anderberg1973cluster} that can give us an idea of a potential mutative evolution of HIV and SIV, that can be interpreted as subtypes of these viruses. However, in order to perform this clustering, we need a method to compute the distance between clusters containing multiple sequences. The article does not present one, so we had to design our own, described in Subsection~\ref{ssec:merge} 
 
 
 \subsection{Bootstrapping}
 
-Finally, in order to have more confidence in the results, the authors use the statistical technique of `bootstrapping'~\cite{efron1979bootstrap}. In the sequence comparison case, the method proposed in~\cite{felsenstein1980confidence} was considered and adapted to local decoded sequences. The motivation to use this method is that the obtaind results may have some degree of uncertainty due to the noise of limitations in the data. Therefore, from the input data, we create an artificial set of sequence replicates. For a given sequence of the original data, we create an random replicate of the same size by randomly picking (sampling with replacement) and concatenating sites of the original data. After this artificial sets has been created, we can run the same analysis we made on the original set on our new set, and judge of the stability of our method with the new result. 
+Finally, in order to have more confidence in the results, the authors use the statistical technique of `bootstrapping'~\cite{efron1979bootstrap}. In the case of sequence comparison, the method proposed in~\cite{felsenstein1980confidence} was considered and adapted to local decoded sequences. The motivation behind using this method is that the results obtained may possess a certain degree of uncertainty due to data limitations or noise.\\
+
+For each sequence in the original data, a random replicate of the same size is created by randomly selecting sites from the original data with replacement and concatenating them. Once these artificial sets have been generated, the same analysis performed on the original set is carried out on the new set. By comparing the results obtained from the original set with those from the artificial sets, the stability of the method can be assessed, taking into account the inherent uncertainty introduced by the data.
 
 \section{Material \& Method}\label{sec:mat_method}
 
@@ -378,11 +380,11 @@ We used two different sequence sets to run our experiments: one given from Gille
 
 \subsection{Cluster merging method}\label{ssec:merge}
 
-For our cluster merging method, we inspired ourselves of centroid linkage methods~\cite{duda1973pattern}. For a given cluster $\mathcal{C}$ containing more than one sequence, we create an artificial sequence, of the size of the shortest sequence of the cluster, defined as follows:
+For our cluster merging method, we drew inspiration from centroid linkage methods~\cite{duda1973pattern}. When considering a cluster $\mathcal{C}$ containing more than one sequence, we create an artificial sequence with a length equal to that of the shortest sequence within the cluster. This artificial sequence is defined as follows:
 \[
     \widetilde{\text{seq}}_i = \arg \max_{s_i; \,s \in \mathcal C} \frac{s_i}{|\mathcal C|},  \quad \forall i \in \llbracket 1, \, n \rrbracket, \, n = \min_{s \in \mathcal{C}} |s| 
 \]
-In a more natural language, for each site of the artificial sequence, we take the $N$-class appearing the most in the same site of the different sequences odf teh cluster. Obviously, there can be $N$-classes having the same frequency of occurence, therefore, we take the first element having the larger frequency. Then, to compute the distance between two clusters, we use the same formula as shown in Subsection~\ref{sseq:dissim}. 
+In simpler terms, for each site of the artificial sequence, we select the $N$-class that appears most frequently at the corresponding site across the different sequences in the cluster. If multiple $N$-classes have the same frequency of occurrence, we choose the first element with the highest frequency. To compute the distance between two clusters, we utilize the same formula as shown in Subsection~\ref{sseq:dissim}. 
 
 
 
@@ -392,7 +394,7 @@ In a more natural language, for each site of the artificial sequence, we take th
 
 \subsubsection{Comparison of the clustering trees}
 
-We applied the procedure described in the summary (Section~\ref{seq:summary}). The obtained dissimilarity matrix of the set of sequences can be found in the \texttt{dissmatrix\_\_66\_sequences.txt} file in the repository, as it does not fit in a single to be readable. You can find the associated cluster tree of this dissimilarity matrix in Figure~\ref{fig:tree66}, in the Appendix, following the cluster tree of the original article in Figure~\ref{fig:original_tree66}.\\
+We have followed the procedure outlined in the summary (Section~\ref{seq:summary}). The resulting dissimilarity matrix for the set of sequences can be found in the file named \texttt{dissmatrix\_\_66\_sequences.txt} within the repository. Since the matrix is too large to be displayed here, please refer to the file for its contents. Additionally, the corresponding cluster tree for this dissimilarity matrix is presented in Figure~\ref{fig:tree66} in the Appendix. It follows the cluster tree from the original article, which can be found in Figure~\ref{fig:original_tree66}.\\
 
 When looking at both the figures, we can see that they are very alike. Let's take the following sequences in example:
 
@@ -417,7 +419,9 @@ The only potentially significant difference between our two trees is that, in ou
 
 \subsubsection{Bootstrapping}
 
-We performed 10 different bootstraps in order to see if our method is reliable. You can find the 10 trees at the following path: \texttt{Trees/Bootstraps\_66\_sequences}. All the trees have the same structure, with 3 blocks of sequences never mixing up between themselves, plus the sequence \texttt{M31113} that always has the same position in all the bootstrap trees. We can still notice some permutations between sequences in the different blocks. Those permutations stay in the deeper half of the tree for the `large block'. Though the bootstraps are not exactly the same to one another, and do not have the exact same structure than our original generated tree, our method still sort the HIV and SIV subtypes pretty accurently.
+We conducted 10 different bootstraps to assess the reliability of our method. The resulting trees can be found at the following path: \texttt{Trees/Bootstraps\_66\_sequences}. All the trees exhibit the same overall structure, with three distinct blocks of sequences that remain separate from each other. Additionally, the sequence \texttt{M31113} consistently maintains the same position in all the bootstrap trees. However, some permutations between sequences within the different blocks can still be observed. These permutations tend to occur in the deeper half of the tree for the ``large block''.\\
+
+While the bootstrap trees are not identical to each other or to the original generated tree in terms of their structure, our method still accurately distinguishes between the subtypes of HIV and SIV. This indicates the robustness of our approach, despite variations in the specific arrangements of the trees and permutations within the sequence blocks.
 
 
 \subsection{`German' set of sequences}
