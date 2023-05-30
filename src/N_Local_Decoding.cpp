@@ -37,7 +37,7 @@ vector<string> sequences;
 tuple_matrix rewritten_sequences;
 vector<string> sequence_names;
 int n_sequences = 0;
-map <int, vector<tuple<int, int> >> classes_map;
+map <int, vector<tuple<int, int>>> classes_map;
 
 //The only parameter needed is N, for the word size used for the N-local decoding algorithm
 int N = 15;
@@ -520,25 +520,21 @@ void writeTreesToNewickFile(vector<Cluster*>& trees,const std::string& filename)
     cout << "Trees written to file: " << filename << endl;
 }
 
-
-int main(){
-    //Reading the sequences from the original dataset, storing the names in sequence_names
-    readFile("nef.fsa");
-    /*
-    for(int i = 0; i < sequences.size(); i++){
-        cout << sequences.at(i) << endl;
+void WriteDissMatrix(diss_matrix matrix, string path){
+    ofstream file1;
+    file1.open(path);
+    for(int i = 0; i < matrix.size(); i++){
+        for(int j = 0; j < matrix.size(); j++){
+            file1 << fixed << setprecision(5) << matrix.at(i).at(j) << " ";
+        }
+        file1 << endl;
     }
-    */
-    
-    //The following commented code will rewrite all sequences read from the readFile() method, and write them into a txt file.
-    //The path of the output file can be changed as one lines, as well as the value for the parameter N.
-    //This has already been done some sets of sequences using a value of N=15. The computation takes time, but for testing the
-    //code you can uncomment the lines and run this
-    
-    /*
-    rewritten_sequences = rewriteSequenceList(sequences);
+    file1.close();
+}
+
+void WriteRewrittenSequences(tuple_matrix rewritten_sequences, string path){
     ofstream file;
-    file.open("rewritten_66_sequences_test.txt");
+    file.open(path);
     for(int i = 0; i < rewritten_sequences.size(); i++){
         int j;
         if (rewritten_sequences.at(i).empty()){
@@ -565,34 +561,49 @@ int main(){
         }
     }
     file.close();
+}
+
+
+int main(){
+    //Reading the sequences from the original dataset, storing the names in sequence_names
+    readFile("nef.fsa");
+
+    /*
+    for(int i = 0; i < sequences.size(); i++){
+        cout << sequences.at(i) << endl;
+    }
     */
     
+    //The following commented code will rewrite all sequences read from the readFile() method, and write them into a txt file.
+    //The path of the output file can be changed as one lines, as well as the value for the parameter N.
+    //This has already been done some sets of sequences using a value of N=15. The computation takes time, but for testing the
+    //code you can uncomment the lines and run this
+    
+    /*
+    rewritten_sequences = rewriteSequenceList(sequences);
+    WriteRewrittenSequences(rewritten_sequences, "rewritten_66_sequences.txt");
+    */
+    
+
+    //We read the rewritten sequences
+    rewritten_sequences = read_rewritten_sequences("../data/Rewritten sequences/rewritten_66_sequences.txt");
+
     //This code will compute the dissimilarity matrix over a set of rewritten sequences (always use the original set of sequences,
     //not the bootstrap replicates) and save them to a txt file.
     
     /*
-    ofstream file1;
-    file1.open("dissmatrix_66_sequences_test.txt");
     diss_matrix matrix =  ComputeDissimilarityMatrix(rewritten_sequences);
-    for(int i = 0; i < matrix.size(); i++){
-        for(int j = 0; j < matrix.size(); j++){
-            file1 << fixed << setprecision(5) << matrix.at(i).at(j) << " ";
-        }
-        file1 << endl;
-    }
-    file1.close();
+    WriteDissMatrix(matrix, "dissmatrix_66_sequences.txt")
     */
-
-    //We read the rewritten sequences
-    rewritten_sequences = read_rewritten_sequences("./TXT files/rewritten_66_sequences.txt");
     
     //This part of the code will generate a certain number of bootstrap replicates. The process of hierarchical clustering takes 
     //over 300 seconds for each set of 66 sequences, so a big number of replicates is not recommended unless you have a lot of 
     //time and/or computational power. Once again, several results have already been computed, so it's not necessary to run everything
     //again. Setting N_replicates = 0, this could all be run but just using the original dataset, which can be done in feasible time.
+    
     /*
     vector<tuple_matrix> bootstrap_replicates;
-    int N_replicates = 0;
+    int N_replicates = 10;
     for(int i = 0; i < N_replicates; i++){
         bootstrap_replicates.push_back(generateReplicates(rewritten_sequences));
     }
@@ -600,6 +611,7 @@ int main(){
     
 
     //Computing dissimilarity matrices for the bootstrap samples
+    
     /*
     vector<diss_matrix> bootstrap_diss;
     for(int i = 0; i < N_replicates; i++){
@@ -609,7 +621,7 @@ int main(){
     */
 
     //Reading the already computed dissimilarity matrix
-    diss_matrix matrix = read_diss_matrix("./TXT files/dissmatrix_66_sequences.txt");
+    diss_matrix matrix = read_diss_matrix("../data/Dissimilarity Matrices/dissmatrix_66_sequences.txt");
 
     //Performing hierarchical clustering, over the original set of sequences as well as over the bootstrap replicates.
     //All the results are stored in the vector trees.
@@ -621,6 +633,7 @@ int main(){
     trees.push_back(root);
 
     //If computing bootstrap trees, uncomment this part to add the trees 
+    
     /*
     for(int i = 0; i < N_replicates; i++){
         Cluster * clust = hierarchical_clustering(bootstrap_diss.at(i));
@@ -629,7 +642,7 @@ int main(){
     */
     
     //Final part of the code, once we have the trees we want to run Consensus on, we save them to a txt file in the Newick format
-    writeTreesToNewickFile(trees, "newick_trees_66_sequences_bootstrap.txt");
+    writeTreesToNewickFile(trees, "newick_trees_66_sequences.txt");
     
 
     return 0;
