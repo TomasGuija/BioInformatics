@@ -104,14 +104,16 @@ float distance(tuple_list s1, tuple_list s2){
 
     for(int i  = 0; i < len; i++){
         tuple<char, int> x = shortest.at(i);
-        //If the class at position i has already been taken into account for the distance, go on to the next one
-        if(count(compared_classes.begin(), compared_classes.end(), get<1>(x))) continue;
-        //Otherwise, we take the minimun number of instances of class i in both sequences and add it to the sum
-        compared_classes.push_back(get<1>(x));
-        int u = count(s1.begin(), s1.end(), x);
-        int v = count(s2.begin(), s2.end(), x);
-        int min = std::min(u,v);
-        sum += min;
+        if(get<1>(x) != 0){
+            //If the class at position i has already been taken into account for the distance, go on to the next one
+            if(count(compared_classes.begin(), compared_classes.end(), get<1>(x))) continue;
+            //Otherwise, we take the minimun number of instances of class i in both sequences and add it to the sum
+            compared_classes.push_back(get<1>(x));
+            int u = count(s1.begin(), s1.end(), x);
+            int v = count(s2.begin(), s2.end(), x);
+            int min = std::min(u,v);
+            sum += min;
+        }
     }
 
     //The sum will give an idea of how close both sequences are from each other. To normalize this value, we must divide it between the 
@@ -235,68 +237,6 @@ void print_cluster(const Cluster *cluster, ofstream &file, int level = 0) {
     print_cluster(cluster->right, file, level + 1);
 }
 
-//Rewritting sequences using N-local decoding. No longer used. rewriteSequenceList is the more developed version, adapted to work 
-//on several sequences at the same time.
-tuple_list rewriteSequence(string sequence){
-
-    //Clasify all sites to class 0 (unclassified)
-    tuple_list res;
-    int n_N_words = sequence.length() - (N-1);
-    string N_words[n_N_words];
-    for(int i = 0; i < sequence.length(); i++){
-        res.push_back(tuple <char, int>(sequence[i], 0)); //Initialising the res <A,0>, <C,0>...
-        //Storing every single N_word in an array
-        if(i < n_N_words)
-            N_words[i] = sequence.substr(i, N);
-
-    }
-
-
-    //Classifying sites
-    int n = 1;
-    //Bigger loop goes through every single N word
-    for(int i = 0; i < n_N_words; i++){
-        string N_word = N_words[i];
-        //Second loop goes through all N words starting from i+1
-        for(int j = i+1; j < n_N_words; j++){
-            if(N_word == N_words[j]){
-                //This loop goes through all letters in the matching N-words
-                for(int k = 0; k < N; k++){
-                    //Get the current class of each site
-                    int class_i = get<1>(res.at(i+k));
-                    int class_j = get<1>(res.at(j+k));
-                    cout << "Letras: " << get<0>(res.at(i+k)) << "  " << get<0>(res.at(j+k)) << endl;
-
-                    //In case one of them has been classifed and the other hasn't, we match the class of the unclassified one to the first one
-                    if(class_i != 0 && class_j == 0)
-                        class_j = class_i;
-                    else if(class_i == 0 && class_j != 0)
-                        class_i = class_j;
-                    //If none have been classified, we create a new class for both of them
-                    else if(class_i == 0 && class_j == 0){
-                        class_j = n;
-                        class_i = n;
-                        n++;
-                    }else{ //When both have been classified
-                        //We go through every single site in the sequence, and we will preserve the class of the site i
-                        //Whenever we find a site classified as class_j, we make its class equal to class_i
-                        for(int l = 0; l < sequence.length(); l++){
-                            if(get<1>(res.at(l)) == class_j){
-                                get<1>(res.at(l)) = class_i;
-                            }
-                        }
-                        class_j = class_i;
-                    }
-                    //Update the values of the classes in res
-                    get<1>(res.at(i+k)) = class_i;
-                    get<1>(res.at(j+k)) = class_j;
-                }
-            }
-        }
-    }
-
-    return res;
-}
 
 //Rewritting all sequences using N-local decoding
 tuple_matrix rewriteSequenceList(vector<string> sequences){
@@ -579,10 +519,10 @@ int main(){
     //This has already been done some sets of sequences using a value of N=15. The computation takes time, but for testing the
     //code you can uncomment the lines and run this
     
-    /*
-    rewritten_sequences = rewriteSequenceList(sequences);
-    WriteRewrittenSequences(rewritten_sequences, "rewritten_66_sequences.txt");
-    */
+    
+    //rewritten_sequences = rewriteSequenceList(sequences);
+    //WriteRewrittenSequences(rewritten_sequences, "rewritten_66_sequences.txt");
+    
     
 
     //We read the rewritten sequences
@@ -591,10 +531,10 @@ int main(){
     //This code will compute the dissimilarity matrix over a set of rewritten sequences (always use the original set of sequences,
     //not the bootstrap replicates) and save them to a txt file.
     
-    /*
-    diss_matrix matrix =  ComputeDissimilarityMatrix(rewritten_sequences);
-    WriteDissMatrix(matrix, "dissmatrix_66_sequences.txt")
-    */
+    
+    //diss_matrix matrix =  ComputeDissimilarityMatrix(rewritten_sequences);
+    //WriteDissMatrix(matrix, "dissmatrix_50_sequences.txt");
+    
     
     //This part of the code will generate a certain number of bootstrap replicates. The process of hierarchical clustering takes 
     //over 300 seconds for each set of 66 sequences, so a big number of replicates is not recommended unless you have a lot of 
@@ -631,6 +571,7 @@ int main(){
     vector<Cluster*> trees;
     cout << "Finished clustering" << endl;
     trees.push_back(root);
+    
 
     //If computing bootstrap trees, uncomment this part to add the trees 
     
@@ -642,7 +583,7 @@ int main(){
     */
     
     //Final part of the code, once we have the trees we want to run Consensus on, we save them to a txt file in the Newick format
-    writeTreesToNewickFile(trees, "newick_trees_66_sequences.txt");
+    writeTreesToNewickFile(trees, "newick_trees_66_sequences_bootstrap.txt");
     
 
     return 0;
