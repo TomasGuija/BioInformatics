@@ -18,4 +18,10 @@ alignments: application to HIV/SIV subtyping** from *Didier et. al.*, 2007'. Sou
   - `/nef.fsa`: Copy of the sequence set from `/LocDec - provided by Prof. Didier`
 - `./src`: Source files for the execution of our experimentation
 
-> :warning: :blush:
+> :warning: **WARNING**: The source file `./src/N_Local_Decoding.cpp` **works perfectly under Windows**, but seems to have **problems reading rewritten files under Linux Mint**.
+>
+> After multiple attemps on solving the problem, we decided to spend the remaining time on perfecting and completing our working code under the working environment.
+>
+> If any problem occurs under your computing environment, feel free to contact at: tomas.guija.valiente@ulb.be
+
+
