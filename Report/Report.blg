@@ -1,15 +1,15 @@
 [0] Config.pm:307> INFO - This is Biber 2.17
 [0] Config.pm:310> INFO - Logfile is 'Report.blg'
-[73] biber:340> INFO - === mar. mai 30, 2023, 00:47:47
-[87] Biber.pm:418> INFO - Reading 'Report.bcf'
-[143] Biber.pm:972> INFO - Found 11 citekeys in bib section 0
-[153] Biber.pm:4383> INFO - Processing section 0
-[161] Biber.pm:4574> INFO - Looking for bibtex file 'biblio.bib' for section 0
-[162] bibtex.pm:1713> INFO - LaTeX decoding ...
-[175] bibtex.pm:1518> INFO - Found BibTeX data source 'biblio.bib'
-[269] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[269] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[269] Biber.pm:4203> INFO - Sorting list 'ynt/global//global/global' of type 'entry' with template 'ynt' and locale 'en-US'
-[269] Biber.pm:4209> INFO - No sort tailoring available for locale 'en-US'
-[281] bbl.pm:654> INFO - Writing 'Report.bbl' with encoding 'UTF-8'
-[290] bbl.pm:757> INFO - Output to Report.bbl
+[58] biber:340> INFO - === mer. mai 31, 2023, 14:18:47
+[68] Biber.pm:418> INFO - Reading 'Report.bcf'
+[116] Biber.pm:972> INFO - Found 11 citekeys in bib section 0
+[125] Biber.pm:4383> INFO - Processing section 0
+[132] Biber.pm:4574> INFO - Looking for bibtex file 'biblio.bib' for section 0
+[133] bibtex.pm:1713> INFO - LaTeX decoding ...
+[145] bibtex.pm:1518> INFO - Found BibTeX data source 'biblio.bib'
+[226] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[226] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[226] Biber.pm:4203> INFO - Sorting list 'ynt/global//global/global' of type 'entry' with template 'ynt' and locale 'en-US'
+[226] Biber.pm:4209> INFO - No sort tailoring available for locale 'en-US'
+[236] bbl.pm:654> INFO - Writing 'Report.bbl' with encoding 'UTF-8'
+[241] bbl.pm:757> INFO - Output to Report.bbl

@@ -11,6 +11,6 @@
 \contentsline {subsubsection}{\numberline {III.1.1}Comparison of the clustering trees}{4}{subsubsection.3.1.1}%
 \contentsline {subsubsection}{\numberline {III.1.2}Bootstrapping}{5}{subsubsection.3.1.2}%
 \contentsline {subsection}{\numberline {III.2}`German' set of sequences}{5}{subsection.3.2}%
-\contentsline {section}{\numberline {IV.}Conclusion}{5}{section.4}%
+\contentsline {section}{\numberline {IV.}Conclusion}{6}{section.4}%
 \contentsline {section}{References}{6}{section.4}%
-\contentsline {section}{Appendix}{7}{section*.4}%
+\contentsline {section}{Appendix}{6}{section*.5}%

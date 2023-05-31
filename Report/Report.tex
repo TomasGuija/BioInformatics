@@ -380,34 +380,51 @@ In simpler terms, for each site of the artificial sequence, we select the $N$-cl
 
 \subsubsection{Comparison of the clustering trees}
 
-We have followed the procedure outlined in the summary (Section~\ref{seq:summary}) and used the same length of $N$-words as in the article, i.e. $N=15$. The resulting dissimilarity matrix for the set of sequences can be found in the file named \texttt{dissmatrix\_\_66\_sequences.txt} within the repository. Since the matrix is too large to be displayed here, please refer to the file for its contents. Additionally, the corresponding cluster tree for this dissimilarity matrix is presented in Figure~\ref{fig:tree66} in the Appendix. It follows the cluster tree from the original article, which can be found in Figure~\ref{fig:original_tree66}.\\
+We have followed the procedure outlined in the summary (Section~\ref{seq:summary}) and used the same length of $N$-words as in the article, i.e. $N=15$. The resulting dissimilarity matrix for the set of sequences can be found at the following path: \texttt{data/Dissimilarity Matrices/dissmatrix\_\_66\_sequences.txt} within the repository. Since the matrix is too large to be displayed here, please refer to the file for its contents. Additionally, the corresponding cluster tree for this dissimilarity matrix is presented in Figure~\ref{fig:tree66} in the Appendix. It follows the cluster tree from the original article, which can be found in Figure~\ref{fig:original_tree66}.\\
 
-When looking at both the figures, we can see that they are very alike. Let's take the following sequences in example:
+When looking at both the figures, we can see that they are very alike. Let's take the following sequences in example, that both come from the smaller `block' of each tree:
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}{.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Images/Example2_Orig66.png}
+        \caption{Part of the original tree}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Images/Example2_66.png}
+        \caption{Part of the generated tree}
+    \end{subfigure}
+\end{figure}
+
+On these parts of the trees, we can see that there is a large resemblance between the two. The few differences between the two are permutations between the subtrees (\texttt{J03654} that should be in the other subtree and \texttt{D00835} that should be deeper in the subtree), and the sequence \texttt{M31113} that do not appear in the generated tree, as it is alone as child of the root node. This change can be one of the possibly significant change between the two trees\\
+
+We can look at a second example:
 
 \begin{figure}[H]
     \centering
     \begin{subfigure}{0.48\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{Images/Example_66.png}
-        \caption{Part of the generated tree}
+        \includegraphics[width=\textwidth]{Images/Example_Orig66.png}
+        \caption{Another part of the original tree}
     \end{subfigure}
     \hfill
     \begin{subfigure}{0.48\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{Images/Example_Orig66.png}
-        \caption{Part of the original tree}
+        \includegraphics[width=\textwidth]{Images/Example_66.png}
+        \caption{Another part of the generated tree}
     \end{subfigure}
 \end{figure}
 
-We can see on these parts of the trees that the only difference is that, on the generated tree, the sequences \texttt{M62320} and \texttt{AF004885} are `siblings' (i.e. formed a cluster alone together at some point of the hierarchical clustering), where in the original tree, they are one `generation' apart. These kind of changes can be explained by the fact that our clustering method are probably not the same, the one of the article not being presented, and by the fact that we miss 4 sequences from the original set.\\
-
-The only potentially significant difference between our two trees is that, in ours, the sequence \texttt{M31113} is directly linked to the root, with no direct sibling, when it is a lot more deeply inserted in the original tree. 
+There are more difference between these two parts, but still pretty small. \texttt{AF005494} should take \texttt{AJ249236}'s place, and the latter become a sibling of \texttt{AJ249237}, with the additional (non-colored) sequences that should come or leave the subtree 
 
 \subsubsection{Bootstrapping}
 
-We conducted 10 different bootstraps to assess the reliability of our method. The resulting trees can be found at the following path: \texttt{Trees/Bootstraps\_66\_sequences}. All the trees exhibit the same overall structure, with three distinct blocks of sequences that remain separate from each other. Additionally, the sequence \texttt{M31113} consistently maintains the same position in all the bootstrap trees. However, some permutations between sequences within the different blocks can still be observed. These permutations tend to occur in the deeper half of the tree for the ``large block''.\\
+We conducted 10 different bootstraps to assess the reliability of our method. The resulting trees can be found at the following path: \texttt{data/Tree visualization/Bootstraps\_66\_sequences}. All the trees exhibit the same overall structure, with three distinct blocks of sequences that remain separate from each other. Additionally, the sequence \texttt{M31113} consistently maintains the same position in all the bootstrap trees. However, some permutations between sequences within the different blocks can still be observed. These permutations tend to occur in the deeper half of the tree for the ``large block''.\\
 
-While the bootstrap trees are not identical to each other or to the original generated tree in terms of their structure, our method still accurately distinguishes between the subtypes of HIV and SIV. This indicates the robustness of our approach, despite variations in the specific arrangements of the trees and permutations within the sequence blocks.
+While the bootstrap trees are not identical to each other or to the original generated tree in terms of their structure, our method still accurately distinguishes between the subtypes of HIV and SIV. All the sequences of subtypes HIV-1-M are grouped together in the larger subtree, and the sequences of subtype HIV-2-A in another subtree. This indicates the robustness of our approach, despite variations in the specific arrangements of the trees and permutations within the sequence blocks.
 
 
 \subsection{`German' set of sequences}
@@ -430,28 +447,27 @@ As mentioned earlier, this article was published in 2007, and since then, other 
 \addcontentsline{toc}{section}{References}
 \printbibliography
 
-\newpage
 \addcontentsline{toc}{section}{Appendix}
 \section*{Appendix}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{../Trees/original_66_tree.png}
-    \caption{Original tree obtained from the dissimilarity matrix of the sequences of the original article, with $N = 15$}
+    \includegraphics[width=\textwidth]{../data/Tree visualization/original_66_tree.png}
+    \caption{Original tree obtained from the dissimilarity matrix of the sequences of the original article, with $N = 15$ - accesible in the repository at \texttt{data/Tree  visualization/original\_66\_tree.png}}
     \label{fig:original_tree66}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=.95\textheight, angle=90]{../Trees/66_tree.png}
-    \caption{Tree obtained from the dissimilarity matrix of the sequences of the original article, with $N = 15$}
+    \includegraphics[width=.95\textheight, angle=90]{../data/Tree visualization/66_tree.png}
+    \caption{Tree obtained from the dissimilarity matrix of the sequences of the original article, with $N = 15$ - accesible in the repository at \texttt{data/Tree  visualization/66\_tree.png}}
     \label{fig:tree66}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=.95\textheight, angle=90]{../Trees/50_tree.png}
-    \caption{Tree obtained from the dissimilarity matrix of the 50 sequences from Germany, with $N = 15$}
+    \includegraphics[width=.95\textheight, angle=90]{../data/Tree visualization/50_tree.png}
+    \caption{Tree obtained from the dissimilarity matrix of the 50 sequences from Germany, with $N = 15$ - accesible in the repository at \texttt{data/Tree  visualization/50\_tree.png}}
     \label{fig:tree50}
 \end{figure}
 
